@@ -1,0 +1,158 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output. 
+#
+
+sidebar:
+    # Site Settings
+    title: My Resume
+    url: 'https://mukimov.com'
+    about: false # set to False or comment line if you want to remove the "How to use?" in the sidebar
+    
+    # Profile information
+    name: Damir Mukimov
+    tagline: Lead Developer
+    pic: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    
+    # Sidebar links
+    email: damir@mukimov.com
+    phone: +49 1520 232 8598
+    website: mukimov.com #do not add http://
+    linkedin: mukimov
+    github: samyrai
+    instagram: v_strochku
+
+    languages:
+        - language:
+          idiom: Russian
+          level: Native
+        - language:
+          idiom: English
+          level: Professional
+        - language:
+          idiom: German
+          level: Basic
+        
+    interests:
+        - interest:
+          item: Photography/Videography
+          link: http://instagram.com/v_strochku
+        - interest:
+          item: Literature
+          link:
+        - interest:
+          item: Snowboarding
+          link:
+
+career-profile: 
+    title: Career Profile
+    text: 'My technical background is comming from microelectronics and micromechnical engineering. l;skjlkfaj;sdlkfja;lskjdf;alsfdkj'
+
+experiences:
+    - experience:
+      role: CTO
+      time: 12-14
+      company: Mind
+      details: Did a lot of stuff
+    - experience:
+      role: Ruby Developer
+      time: 12-14
+      company: Mind
+      details: Did a lot of stuff
+
+education_in_main: true
+
+
+studies: 
+    - education:
+      degree: MSc in Computer Science
+      university: University of London
+      time: 2011 - 2012
+      details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing
+      elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+      pellentesque eu, pretium quis, sem."
+
+    - education:
+      degree: BSc in Applied Mathematics
+      university: Bristol University
+      time: 2007 - 2011
+      details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing
+      elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+      pellentesque eu, pretium quis, sem."
+
+
+projects:
+    title: Projects
+    intro: "You can list your side projects or open source libraries in this section. Lorem ipsum dolor
+      sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus."
+    
+    projects:
+      - project:
+        title: Velocity
+        link: "#hook"
+        tagline: "A responsive website template designed to help startups promote, market and sell their products."
+      - project:
+        title: DevStudio
+        link: "#"
+        tagline: "A responsive website template designed to help web developers/designers market their services."
+      - project:
+        title: Tempo
+        link: "#"
+        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
+      - project:
+        title: Atom
+        link: "#"
+        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
+      - project:
+        title: Delta
+        link: "#"
+        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
+
+
+
+
+# publications:
+#     title: Publications
+#     intro: "You can list your publications in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus."
+    
+#     publications:
+#       - paper:
+#         title: The Art of Computer Programming
+#         authors: Donald E. Knuth
+#         conference: Addison-Wesley, 1968
+#       - paper:
+#         title: "Genetic Programming III: Darwinian Invention &amp; Problem Solving"
+#         authors: Koza, J.R., Andre, D., Bennett, F.H., Keane, M.A.
+#         conference: "Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edn. (1999)"
+#       - paper:
+#         title: A syntax directed compiler for Algol 60
+#         authors: Edgar T. Irons
+#         conference: "Comm. ACM 4 (1961), 51–55"
+
+
+skills:
+    title: Skills &amp; Proficiency
+    skills:
+        - skill:
+          name: DevOps
+          level: 98%
+        - skill:
+          name: Javascript & jQuery
+          level: 70%
+        - skill:
+          name: Angular React
+          level: 98%
+        - skill:
+          name: HTML5 & CSS
+          level: 95%
+        - skill:
+          name: Ruby | Ruby on Rails | Hanami
+          level: 95%
+        - skill:
+          name: Sketch & Photoshop
+          level: 60%
+
+
+footer: 
+    text: 'Designed by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a> for developers'
