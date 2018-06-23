@@ -7,7 +7,7 @@
       {% for interest in site.data.data.sidebar.interests %}
 
       {% if interest.link %}
-        <li><a href="{{ interest.link }}">{{ interest.item }}</a></li>
+        <li><i class="fa {{ interest.icon }}"></i> <a href="{{ interest.link }}">{{ interest.item }}</a></li>
         {% else %}
         <li>{{ interest.item }}</li>
         {% endif %}

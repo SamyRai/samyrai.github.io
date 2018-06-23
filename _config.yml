@@ -5,11 +5,11 @@ author:            Damir Mukimov
 baseurl:           "/"
 url:               "http://samyrai.github.io"
 timezone:          Europe/Berlin
+education_in_main: false
 
 # Social Profiles
 instagram_username:  v_strochku
 github_username:   samyrai
-
 # Build settings
 markdown:          kramdown
 paginate:          5

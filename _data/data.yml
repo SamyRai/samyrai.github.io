@@ -36,78 +36,110 @@ sidebar:
         - interest:
           item: Photography/Videography
           link: http://instagram.com/v_strochku
+          icon: fa-envelope
         - interest:
           item: Literature
-          link:
+          link: https://www.tercul.com
+          icon: fa-book
         - interest:
-          item: Snowboarding
-          link:
+          item: Business
+          link: https://www.tercul.com
+          icon: fa-briefcase
 
 career-profile: 
     title: Career Profile
-    text: 'My technical background is comming from microelectronics and micromechnical engineering. l;skjlkfaj;sdlkfja;lskjdf;alsfdkj'
+    text: 'Experienced Ruby and Golang developer with the focus on issues solving and tasks complition. Growing my knowledge in managing and team operation. Was leading 2 IT projects with 4 and 5 people each. Worked as a CTO in Machine Learning Start Up that was funded by German Government. My technical background is comming from microelectronics and micromechnical engineering field where I have academic experince with published papers and multiple science conference presentations.'
 
 experiences:
     - experience:
-      role: CTO
-      time: 12-14
-      company: Mind
-      details: Did a lot of stuff
+      role: Lead Developer
+      time: 05.2018-current
+      company: GetSafe GmbH
+      details: <ul><li> Building tools for internal clients operations</li> <li> Helping to improve development processed</li> <li> Helping to integrate Jira in working processes</li></ul>
     - experience:
-      role: Ruby Developer
-      time: 12-14
-      company: Mind
-      details: Did a lot of stuff
-
-education_in_main: true
-
+      role: Chief Technology Officer (CTO)
+      time: 04.2017-05.2018
+      company: Mind Intelligence UG
+      details: 
+        <ul><li>Participant of EXIST Business Start-up Grant program.</li>
+        <li>Developing architecture and empathy technology with methods of Deep Learning.</li>
+        <li>Development team foundation and freelancers management.</li>
+        <li>Various MVPs development for market testing.</li></ul>
+    - experience:
+      role: Ruby on Rails Developer
+      time: 04.2015-03.2017
+      company: Distribusion Technologies GmbH
+      details: 
+        <ul><li> Core API design and development.</li>
+        <li> Separation of monolith app into smaller applications.</li>
+        <li> Building responsive front-end in accordance with BEM technology.</li>
+        <li> SOAP and JSON API integration of partners.</li>
+        <li> Building and managing processes for applications localisation into more than 10 languages.</li>
+        <li> Interviewing new developers.</li>
+        <li> Managing CI and test infrastructure.</li>
+        <li> Implementing part of micro-service architecture.</li>
+        <li> Implementing internal gem for simplifying partners integrations.</li>
+        <li> Implementing gem for objects representation.</li>
+        <li> Build Go application for big CSV files pre-processing.</li></ul>
+    - experience:
+      role: Ruby on Rails Developer
+      time: 10.2014-04.2015
+      company: OOO "Sirena-Bus"
+      details:
+        <li> Back- and front-end developing.</li>
+        <li> Writing AngularJS front-end (views and controllers) for Rails back-end.</li>
+        <li> Building infrastructure for app deployment and server configuration with Ansible.</li></ul>
+    - experience:
+      role: Research associate and Project Manager
+      time: 10.2012-09.2014
+      company: National Research University of Electronic Technology (MIET)
+      details:
+        <ul><li> Research and development on new sensors and their applications.</li>
+        <li> Writing software for microcontrollers such as AVR, PIC and ARM.</li>
+        <li> Writing PC and mobile software for testing MEMS sensors.</li>
+        <li> Developing biomedical device for vital signs monitoring.</li>
+        <li> Presenting products on exhibitions.</li>
+        <li> Making oral and poster presentations on international science conferences.</li>
+        <li> Science projects management from writing applications to team forming, reports writing and final commissioning.</li></ul>
 
 studies: 
     - education:
       degree: MSc in Computer Science
-      university: University of London
-      time: 2011 - 2012
-      details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing
-      elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-      magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-      pellentesque eu, pretium quis, sem."
+      university: Glyndwr University
+      time: 2011 - 2013
+      details:
 
     - education:
-      degree: BSc in Applied Mathematics
-      university: Bristol University
-      time: 2007 - 2011
-      details: "Describe your study here lorem ipsum dolor sit amet, consectetuer adipiscing
-      elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-      magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-      pellentesque eu, pretium quis, sem."
+      degree: MSc in Electrical Engineering
+      university: National Research University of Electronic Technology
+      time: 2011 - 2013
+      details:
 
+    - education:
+      degree: Interpreter in Professional Communication (English)
+      university: National Research University of Electronic Technology
+      time: 2009 - 2011
+      details:
+
+    - education:
+      degree: BSc in Electrical Engineering
+      university: National Research University of Electronic Technology
+      time: 2007 - 2011
+      details:
 
 projects:
     title: Projects
-    intro: "You can list your side projects or open source libraries in this section. Lorem ipsum dolor
-      sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus."
+    intro: ""
     
     projects:
       - project:
-        title: Velocity
-        link: "#hook"
-        tagline: "A responsive website template designed to help startups promote, market and sell their products."
+        title: Tercul
+        link: "https://www.tercul.com"
+        tagline: "A global literature multicultural library where you can find translation of your favorite literature works and nice thematic collections."
       - project:
-        title: DevStudio
-        link: "#"
-        tagline: "A responsive website template designed to help web developers/designers market their services."
-      - project:
-        title: Tempo
-        link: "#"
-        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
-      - project:
-        title: Atom
-        link: "#"
-        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
-      - project:
-        title: Delta
-        link: "#"
-        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
+        title: Simplify Traffic
+        link: "http://www.simplify-traffic.com/"
+        tagline: "Service for helping bus related companies effectively use their GPS data for tracking vehicles fleet, control drivers, optimising routes and informing passengers about possible delays, estimation arrival time and bus position. <br> This project won multiple Start Up innovation competions."
 
 
 
@@ -135,23 +167,26 @@ skills:
     title: Skills &amp; Proficiency
     skills:
         - skill:
-          name: DevOps
-          level: 98%
+          name: Ruby, Golang
+          level: 95%
+        - skill:
+          name: DevOps (Ansible, Linux, AWS, DO)
+          level: 95%
+        - skill:
+          name: Docker, Kubernetes, CI/CD
+          level: 80%
         - skill:
           name: Javascript & jQuery
-          level: 70%
+          level: 60%
         - skill:
-          name: Angular React
-          level: 98%
+          name: Angular & React
+          level: 60%
         - skill:
           name: HTML5 & CSS
           level: 95%
         - skill:
-          name: Ruby | Ruby on Rails | Hanami
-          level: 95%
-        - skill:
-          name: Sketch & Photoshop
-          level: 60%
+          name: Python & Machine Learning
+          level: 75%
 
 
 footer: 
