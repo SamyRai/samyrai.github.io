@@ -18,6 +18,7 @@ After some reasearch I found [this](https://community.atlassian.com/t5/Bitbucket
 > Atlassian supports equality, including the global LGBT population
 
 which is great, I fully agree with equality, but not when it appears without my permision and hide a full screen of terminal history.
+
 So, if you want to keep your terminal clean, go to your account settings and turn the option `Enable console messages` off.
 
 Happy coding without any distractions!
