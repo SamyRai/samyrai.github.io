@@ -1,5 +1,5 @@
 #
-# Be aware that even a small syntax error here can lead to failures in output. 
+# Be aware that even a small syntax error here can lead to failures in output.
 #
 
 sidebar:
@@ -7,12 +7,12 @@ sidebar:
     title: My Resume
     url: 'https://mukimov.com'
     about: false # set to False or comment line if you want to remove the "How to use?" in the sidebar
-    
+
     # Profile information
     name: Damir Mukimov
     tagline: Lead Developer
     pic: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
-    
+
     # Sidebar links
     email: damir@mukimov.com
     phone:
@@ -31,7 +31,7 @@ sidebar:
         - language:
           idiom: German
           level: Basic
-        
+
     interests:
         - interest:
           item: Photography/Videography
@@ -46,7 +46,7 @@ sidebar:
           link: https://www.tercul.com
           icon: fa-briefcase
 
-career-profile: 
+career-profile:
     title: Career Profile
     text: 'Experienced Ruby and Golang developer with the focus on issues solving and tasks complition. Growing my knowledge in managing and team operation. Was leading 2 IT projects with 4 and 5 people each. Worked as a CTO in Machine Learning Start Up that was funded by German Government. My technical background is comming from microelectronics and micromechnical engineering field where I have academic experince with published papers and multiple science conference presentations.'
 
@@ -55,12 +55,16 @@ experiences:
       role: Lead Developer
       time: 05.2018-current
       company: GetSafe GmbH
-      details: <ul><li> Building tools for internal clients operations</li> <li> Helping to improve development processed</li> <li> Helping to integrate Jira in working processes</li></ul>
+      details:
+        <ul><li> Building tools for internal clients operations</li>
+        <li> Internal processes automation</li>
+        <li> Helping to improve development processed</li>
+        <li> Helping to integrate Jira in working processes</li></ul>
     - experience:
       role: Chief Technology Officer (CTO)
       time: 04.2017-05.2018
       company: Mind Intelligence UG
-      details: 
+      details:
         <ul><li>Participant of EXIST Business Start-up Grant program.</li>
         <li>Developing architecture and empathy technology with methods of Deep Learning.</li>
         <li>Development team foundation and freelancers management.</li>
@@ -69,7 +73,7 @@ experiences:
       role: Ruby on Rails Developer
       time: 04.2015-03.2017
       company: Distribusion Technologies GmbH
-      details: 
+      details:
         <ul><li> Core API design and development.</li>
         <li> Separation of monolith app into smaller applications.</li>
         <li> Building responsive front-end in accordance with BEM technology.</li>
@@ -102,7 +106,7 @@ experiences:
         <li> Making oral and poster presentations on international science conferences.</li>
         <li> Science projects management from writing applications to team forming, reports writing and final commissioning.</li></ul>
 
-studies: 
+studies:
     - education:
       degree: MSc in Computer Science
       university: Glyndwr University
@@ -130,7 +134,7 @@ studies:
 projects:
     title: Projects
     intro: ""
-    
+
     projects:
       - project:
         title: Tercul
@@ -147,7 +151,7 @@ projects:
 # publications:
 #     title: Publications
 #     intro: "You can list your publications in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus."
-    
+
 #     publications:
 #       - paper:
 #         title: The Art of Computer Programming
@@ -189,5 +193,5 @@ skills:
           level: 75%
 
 
-footer: 
+footer:
     text: 'Designed by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a> for developers'
