@@ -48,64 +48,79 @@ sidebar:
 
 career-profile:
     title: Career Profile
-    text: 'Experienced Ruby and Golang developer with the focus on issues solving and tasks complition. Growing my knowledge in managing and team operation. Was leading 2 IT projects with 4 and 5 people each. Worked as a CTO in Machine Learning Start Up that was funded by German Government. My technical background is comming from microelectronics and micromechnical engineering field where I have academic experince with published papers and multiple science conference presentations.'
+    text: 'Experienced Ruby and Golang developer with the focus on issues solving and tasks completion. I am growing my knowledge in managing, team operation and product ownership. Led 2 IT projects with 4 and 5 people each. Managed couple of serious science and military projects in Russia from the application to planning, implementation and reporting to ministries. Worked as a CTO in Machine Learning startup funded by German Government. Built and adjusted development processed for internal and remote teams in multiple startups. Always looking for new amazing challenges! '
 
 experiences:
     - experience:
-      role: Lead Developer
-      time: 05.2018-current
+      role: Lead Web Developer
+      time: 02.2019-Current
+      company: HERE Technologies
+      details:
+
+    - experience:
+      role: Lead Fullstack Developer
+      time: 05.2018-12.2018
       company: GetSafe GmbH
       details:
-        <ul><li> Building tools for internal clients operations</li>
-        <li> Internal processes automation</li>
-        <li> Helping to improve development processed</li>
-        <li> Helping to integrate Jira in working processes</li></ul>
+        <ul>
+          <li> Helping to improve development processed</li>
+          <li> Integrating Jira in working processes</li>
+          <li> Defining requirements and building tools for internal clients operations</li>
+          <li> Internal processes automation</li>
+        </ul>
     - experience:
       role: Chief Technology Officer (CTO)
       time: 04.2017-05.2018
       company: Mind Intelligence UG
       details:
-        <ul><li>Participant of EXIST Business Start-up Grant program.</li>
-        <li>Developing architecture and empathy technology with methods of Deep Learning.</li>
-        <li>Development team foundation and freelancers management.</li>
-        <li>Various MVPs development for market testing.</li></ul>
+        <ul>
+          <li>Participant of EXIST Business Start-up Grant program.</li>
+          <li>Development team foundation and freelancers management.</li>
+          <li>Designing architecture and leading the development of empathy technology with methods of Deep Learning.</li>
+          <li>Various MVPs development for market testing.</li>
+        </ul>
     - experience:
       role: Ruby on Rails Developer
       time: 04.2015-03.2017
       company: Distribusion Technologies GmbH
       details:
-        <ul><li> Core API design and development.</li>
-        <li> Separation of monolith app into smaller applications.</li>
-        <li> Building responsive front-end in accordance with BEM technology.</li>
-        <li> SOAP and JSON API integration of partners.</li>
-        <li> Building and managing processes for applications localisation into more than 10 languages.</li>
-        <li> Interviewing new developers.</li>
-        <li> Managing CI and test infrastructure.</li>
-        <li> Implementing part of micro-service architecture.</li>
-        <li> Implementing internal gem for simplifying partners integrations.</li>
-        <li> Implementing gem for objects representation.</li>
-        <li> Build Go application for big CSV files pre-processing.</li></ul>
+        <ul>
+          <li> Core API design and development.</li>
+          <li> Managing CI and test infrastructure.</li>
+          <li> Building and managing processes for applications localisation into more than 10 languages.</li>
+          <li> Separation of monolith app into smaller applications.</li>
+          <li> Building responsive front-end in accordance with BEM technology.</li>
+          <li> SOAP and JSON API integration of partners.</li>
+          <li> Interviewing new developers.</li>
+          <li> Implementing part of micro-service architecture.</li>
+          <li> Implementing internal gem for simplifying partners integrations.</li>
+          <li> Implementing gem for objects representation.</li>
+          <li> Build Go application for big CSV files pre-processing.</li>
+        </ul>
     - experience:
       role: Ruby on Rails Developer
       time: 10.2014-04.2015
       company: OOO "Sirena-Bus"
       details:
-        <li> Back- and front-end developing.</li>
-        <li> Writing AngularJS front-end (views and controllers) for Rails back-end.</li>
-        <li> Building infrastructure for app deployment and server configuration with Ansible.</li></ul>
+        <ul>
+          <li> Back- and front-end developing.</li>
+          <li> Writing AngularJS front-end (views and controllers) for Rails back-end.</li>
+          <li> Building infrastructure for app deployment and server configuration with Ansible.</li>
+        </ul>
     - experience:
       role: Research associate and Project Manager
       time: 10.2012-09.2014
       company: National Research University of Electronic Technology (MIET)
       details:
-        <ul><li> Research and development on new sensors and their applications.</li>
-        <li> Writing software for microcontrollers such as AVR, PIC and ARM.</li>
-        <li> Writing PC and mobile software for testing MEMS sensors.</li>
-        <li> Developing biomedical device for vital signs monitoring.</li>
-        <li> Presenting products on exhibitions.</li>
-        <li> Making oral and poster presentations on international science conferences.</li>
-        <li> Science projects management from writing applications to team forming, reports writing and final commissioning.</li></ul>
-
+        <ul>
+          <li> Science projects management from writing applications to team forming, reports writing and final commissioning.</li>
+          <li> Presenting products on exhibitions.</li>
+          <li> Making oral and poster presentations on international science conferences.</li>
+          <li> Research and development on new sensors and their applications.</li>
+          <li> Writing software for microcontrollers such as AVR, PIC and ARM.</li>
+          <li> Writing PC and mobile software for testing MEMS sensors.</li>
+          <li> Developing biomedical device for vital signs monitoring.</li>
+        </ul>
 studies:
     - education:
       degree: MSc in Computer Science
@@ -171,6 +186,12 @@ skills:
     title: Skills &amp; Proficiency
     skills:
         - skill:
+          name: Project Management
+          level: 75%
+        - skill:
+          name: Leading People and Teams
+          level: 60%
+        - skill:
           name: Ruby, Golang
           level: 95%
         - skill:
@@ -182,16 +203,6 @@ skills:
         - skill:
           name: Javascript & jQuery
           level: 60%
-        - skill:
-          name: Angular & React
-          level: 60%
-        - skill:
-          name: HTML5 & CSS
-          level: 95%
-        - skill:
-          name: Python & Machine Learning
-          level: 75%
-
 
 footer:
     text: 'Designed by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a> for developers'
