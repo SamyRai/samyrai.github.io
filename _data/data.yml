@@ -3,206 +3,168 @@
 #
 
 sidebar:
-    # Site Settings
-    title: My Resume
-    url: 'https://mukimov.com'
-    about: false # set to False or comment line if you want to remove the "How to use?" in the sidebar
+    about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
+    education: True # set to False if you want education in main section instead of in sidebar
 
     # Profile information
     name: Damir Mukimov
-    tagline: Lead Developer
-    pic: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    tagline: Engineering Manager
+    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
-    email: damir@mukimov.com
-    phone:
+    email: mukimov.d@gmail.com
+    phone: +4915202328598
+    citizenship:
     website: mukimov.com #do not add http://
     linkedin: mukimov
-    github: samyrai
-    instagram: v_strochku
+    github: SamyRai
+    pdf: assets/mukimov_cv.pdf
 
     languages:
-        - language:
-          idiom: Russian
-          level: Native
-        - language:
-          idiom: English
-          level: Professional
-        - language:
-          idiom: German
-          level: Basic
+      - idiom: Russian
+        level: Native
+
+      - idiom: English
+        level: Professional
+
+      - idiom: German
+        level: Basic
 
     interests:
-        - interest:
-          item: Photography/Videography
-          link: http://instagram.com/v_strochku
-          icon: fa-envelope
-        - interest:
-          item: Literature
-          link: https://www.tercul.com
-          icon: fa-book
-        - interest:
-          item: Business
-          link: https://www.tercul.com
-          icon: fa-briefcase
+      - item: Videography/Photography
+        link:
+
+      - item: Piloting
+        link:
+
+      - item: Cooking
+        link:
 
 career-profile:
     title: Career Profile
-    text: 'Experienced Ruby and Golang developer with the focus on issues solving and tasks completion. I am growing my knowledge in managing, team operation and product ownership. Led 2 IT projects with 4 and 5 people each. Managed couple of serious science and military projects in Russia from the application to planning, implementation and reporting to ministries. Worked as a CTO in Machine Learning startup funded by German Government. Built and adjusted development processed for internal and remote teams in multiple startups. Always looking for new amazing challenges! '
-
-experiences:
-    - experience:
-      role: Lead Web Developer
-      time: 02.2019-Current
-      company: HERE Technologies
-      details:
-
-    - experience:
-      role: Lead Fullstack Developer
-      time: 05.2018-12.2018
-      company: GetSafe GmbH
-      details:
-        <ul>
-          <li> Helping to improve development processed</li>
-          <li> Integrating Jira in working processes</li>
-          <li> Defining requirements and building tools for internal clients operations</li>
-          <li> Internal processes automation</li>
-        </ul>
-    - experience:
-      role: Chief Technology Officer (CTO)
-      time: 04.2017-05.2018
-      company: Mind Intelligence UG
-      details:
-        <ul>
-          <li>Participant of EXIST Business Start-up Grant program.</li>
-          <li>Development team foundation and freelancers management.</li>
-          <li>Designing architecture and leading the development of empathy technology with methods of Deep Learning.</li>
-          <li>Various MVPs development for market testing.</li>
-        </ul>
-    - experience:
-      role: Ruby on Rails Developer
-      time: 04.2015-03.2017
-      company: Distribusion Technologies GmbH
-      details:
-        <ul>
-          <li> Core API design and development.</li>
-          <li> Managing CI and test infrastructure.</li>
-          <li> Building and managing processes for applications localisation into more than 10 languages.</li>
-          <li> Separation of monolith app into smaller applications.</li>
-          <li> Building responsive front-end in accordance with BEM technology.</li>
-          <li> SOAP and JSON API integration of partners.</li>
-          <li> Interviewing new developers.</li>
-          <li> Implementing part of micro-service architecture.</li>
-          <li> Implementing internal gem for simplifying partners integrations.</li>
-          <li> Implementing gem for objects representation.</li>
-          <li> Build Go application for big CSV files pre-processing.</li>
-        </ul>
-    - experience:
-      role: Ruby on Rails Developer
-      time: 10.2014-04.2015
-      company: OOO "Sirena-Bus"
-      details:
-        <ul>
-          <li> Back- and front-end developing.</li>
-          <li> Writing AngularJS front-end (views and controllers) for Rails back-end.</li>
-          <li> Building infrastructure for app deployment and server configuration with Ansible.</li>
-        </ul>
-    - experience:
-      role: Research associate and Project Manager
-      time: 10.2012-09.2014
-      company: National Research University of Electronic Technology (MIET)
-      details:
-        <ul>
-          <li> Science projects management from writing applications to team forming, reports writing and final commissioning.</li>
-          <li> Presenting products on exhibitions.</li>
-          <li> Making oral and poster presentations on international science conferences.</li>
-          <li> Research and development on new sensors and their applications.</li>
-          <li> Writing software for microcontrollers such as AVR, PIC and ARM.</li>
-          <li> Writing PC and mobile software for testing MEMS sensors.</li>
-          <li> Developing biomedical device for vital signs monitoring.</li>
-        </ul>
-studies:
-    - education:
-      degree: MSc in Computer Science
+    summary: |
+      Experienced Ruby and Golang developer who found his passion in management.
+      I am driven by servant leadership, empathy and mentorship to enable people
+      to do what they can do best. Since I founded and led the development in multiple
+      startups, I know well how to deal with stakeholder management and products
+      prioritisation. Built and adjusted development processes for internal and remote
+      teams, so I truly know how to build the communication bridge between different
+      departments and make the near- or offshoring work in your company. Always looking for
+      amazing challenges!
+education:
+    - degree: MSc in Computer Science
       university: Glyndwr University
       time: 2011 - 2013
       details:
-
-    - education:
-      degree: MSc in Electrical Engineering
+    - degree: MSc in Electrical Engineering
       university: National Research University of Electronic Technology
       time: 2011 - 2013
       details:
-
-    - education:
-      degree: Interpreter in Professional Communication (English)
+    - degree: Interpreter in Professional Communication (English)
       university: National Research University of Electronic Technology
       time: 2009 - 2011
       details:
-
-    - education:
-      degree: BSc in Electrical Engineering
+    - degree: BSc in Electrical Engineering
       university: National Research University of Electronic Technology
       time: 2007 - 2011
       details:
+experiences:
+    - role: Engineering Manager
+      time: 09.2020 - Current
+      company: Homeday GmbH
+      details: |
+        - Leading a cross-functional team of 5-8 engineers.
+        - Planning and shaping a technical backlog together with the team.
+        - Partnering with teams of designers, engineers, product owners, BI and operational team for processes definitions and projects implementation.
+        - Communication with Stakeholders and the team representation.
+    - role: Lead Web Developer
+      time: 02.2019 - 08.2020
+      company: HERE Technologies
+      details: |
+        - Leading development of the documentation platform (verification, building and publishing automation) for more that 300 projects within the company.
+        - Remote team management with full integration into internal processes.
+    - role: Lead Fullstack Developer
+      time: 05.2018 - 12.2018
+      company: GetSafe GmbH
+      details: |
+        - Development processes improvements
+        - Integrating Jira into the working processes
+        - Defining requirements and building tools for internal clients operations
+        - Internal processes automation
+    - role: Chief Technology Officer (CTO)
+      time: 04.2017 - 05.2018
+      company: Mind Intelligence UG
+      details: |
+        - Participant of EXIST Business Start-up Grant program.
+        - Development team foundation and freelancers management.
+        - Designing architecture and leading the development of empathy technology with methods of Deep Learning.
+        - Various MVPs development for market testing.
+
+    - role: Ruby on Rails Developer
+      time: 04.2015 - 03.2017
+      company: Distribusion Technologies GmbH
+      details: |
+        - Core API design and micro-services development.
+        - Building and managing processes for applications localisation into more than 10 languages.
+        - Separation of monolith app into smaller applications.
+        - Interviewing new developers and remote teams management.
+        - Development of the internal ruby gems and Go apps.
+    - role: Ruby on Rails Developer
+      time: 10.2014 - 04.2015
+      company: OOO "Sirena-Bus"
+      details: |
+        - Development of the Ruby on Rails back-end application.
+        - Development of the AngularJS front-end application.
+        - Design of the infrastructure for app deployment and servers configuration with Ansible.
+
+    - role: Research associate and Project Manager
+      time: 10.2012 - 09.2014
+      company: National Research University of Electronic Technology (MIET)
+      details: |
+        - Science projects management from writing applications to team forming, reports writing and final commissioning.
+        - Presenting products on exhibitions.
+        - Making oral and poster presentations on international science conferences.
+        - Research and development on new sensors and their applications.
+        - Writing software for microcontrollers such as AVR, PIC and ARM.
+        - Writing PC and mobile software for testing MEMS sensors.
 
 projects:
     title: Projects
-    intro: ""
+    intro:
+    assignments:
+      - title: Tercul
+        link: https://tercul.com
+        tagline: An international lybrary with translations of the written art as a window to different cultures.
 
-    projects:
-      - project:
-        title: Tercul
-        link: "https://www.tercul.com"
-        tagline: "A global literature multicultural library where you can find translation of your favorite literature works and nice thematic collections."
-      - project:
-        title: Simplify Traffic
-        link: "http://www.simplify-traffic.com/"
-        tagline: "Service for helping bus related companies effectively use their GPS data for tracking vehicles fleet, control drivers, optimising routes and informing passengers about possible delays, estimation arrival time and bus position. <br> This project won multiple Start Up innovation competions."
+      - title: Lazy Journal
+        link: "#"
+        tagline: Go/React app for mental self help and finding true reasons of your procrastination.
 
-
-
-
-# publications:
-#     title: Publications
-#     intro: "You can list your publications in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus."
-
-#     publications:
-#       - paper:
-#         title: The Art of Computer Programming
-#         authors: Donald E. Knuth
-#         conference: Addison-Wesley, 1968
-#       - paper:
-#         title: "Genetic Programming III: Darwinian Invention &amp; Problem Solving"
-#         authors: Koza, J.R., Andre, D., Bennett, F.H., Keane, M.A.
-#         conference: "Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edn. (1999)"
-#       - paper:
-#         title: A syntax directed compiler for Algol 60
-#         authors: Edgar T. Irons
-#         conference: "Comm. ACM 4 (1961), 51–55"
-
+      - title: Simplify Traffic
+        link: "#"
+        tagline: A service for intercity bus companies and their passengers to track the location of their fleet and easy routes and stops management.
 
 skills:
-    title: Skills &amp; Proficiency
-    skills:
-        - skill:
-          name: Project Management
-          level: 75%
-        - skill:
-          name: Leading People and Teams
-          level: 60%
-        - skill:
-          name: Ruby, Golang
-          level: 95%
-        - skill:
-          name: DevOps (Ansible, Linux, AWS, DO)
-          level: 95%
-        - skill:
-          name: Docker, Kubernetes, CI/CD
-          level: 80%
-        - skill:
-          name: Javascript & jQuery
-          level: 60%
+    title: Skills
 
-footer:
-    text: 'Designed by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a> for developers'
+    toolset:
+      - name: Servant Leadership
+
+      - name: Mentorship
+        level: 98%
+
+      - name: Processes Definition and Optimisation
+        level: 98%
+
+      - name: Cross-Functional Communication
+
+      - name: Technical planning
+
+      - name: Ruby/Rails
+      - name: Go
+      - name: JavaScript, TypeScript
+      - name: ReactJS, VueJS
+      - name: DBs
+
+footer: >
+    Designed with <i class="fas fa-heart"></i> by Xiaoying Riley
