@@ -1,0 +1,19 @@
+<section class="mb-12 animate-fade-in" style="animation-delay: 0.4s;">
+    <div class="card">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Skills</h2>
+        <div class="space-y-6">
+            {{ range .Site.Data.skills }}
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">{{ .category }}</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {{ range .toolset }}
+                    <div class="bg-gray-50 rounded-lg px-4 py-3">
+                        <span class="text-sm font-medium text-gray-900">{{ .name }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
