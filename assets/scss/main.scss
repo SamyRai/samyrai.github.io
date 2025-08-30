@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+@import "skins/{{ .Site.Params.theme_skin | default "blue" }}";
+@import "default";

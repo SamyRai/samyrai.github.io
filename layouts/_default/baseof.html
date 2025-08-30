@@ -27,12 +27,13 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- CSS -->
-    {{ $style := resources.Get "css/main.css" | css.Sass | resources.Minify | resources.Fingerprint }}
+    {{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS (dict "targetPath" "css/main.css" "enableSourceMap" true) | postCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     
     <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap">
     
     <!-- Analytics -->
     {{ if .Site.Params.enable_analytics }}
@@ -56,7 +57,7 @@
         {{ partial "sidebar.html" . }}
         
         <!-- Main Content -->
-        <main id="main-content" class="flex-1 lg:ml-80">
+        <main id="main-content" class="flex-1 lg:ml-96">
             {{ block "main" . }}{{ end }}
         </main>
     </div>
