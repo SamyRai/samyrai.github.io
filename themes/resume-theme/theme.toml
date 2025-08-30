@@ -1,0 +1,21 @@
+name = "Resume Theme"
+license = "MIT"
+licenselink = "https://github.com/yourname/resume-theme/blob/master/LICENSE"
+description = "A modern, responsive resume/CV theme for Hugo"
+homepage = "https://example.com/"
+tags = ["resume", "cv", "portfolio", "personal"]
+features = ["resume", "cv", "portfolio"]
+min_version = "0.80.0"
+
+[author]
+  name = "Damir Mukimov"
+  homepage = "https://samyrai.github.io/"
+
+[original]
+  name = "Xiaoying Riley"
+  homepage = "http://themes.3rdwavemedia.com/"
+  repo = "https://github.com/xriley/Orbit-Theme"
+
+[module]
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"

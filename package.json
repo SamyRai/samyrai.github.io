@@ -1,0 +1,22 @@
+{
+  "name": "samyrai-resume",
+  "version": "1.0.0",
+  "description": "Modern resume website built with Hugo and Tailwind CSS",
+  "scripts": {
+    "dev": "hugo server --buildDrafts --buildFuture",
+    "build": "hugo --minify",
+    "build:production": "hugo --minify --environment production"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.12"
+  },
+  "keywords": [
+    "hugo",
+    "resume",
+    "cv",
+    "portfolio",
+    "tailwindcss"
+  ],
+  "author": "Damir Mukimov",
+  "license": "MIT"
+}
