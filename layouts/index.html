@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="container mx-auto px-6 py-8">
+    <!-- Career Profile -->
+    <section class="mb-12 animate-fade-in">
+        <div class="card">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Career Profile</h2>
+            <div class="prose prose-lg max-w-none">
+                <p class="text-gray-700 leading-relaxed">
+                    Technology leader with 15+ years in software and 10+ years building and leading engineering orgs. Grew from hands-on developer to EM/CTO, repeatedly standing up teams, delivery practices, and governance that ship. Comfortable in startup and enterprise contexts; founded companies, ran digital transformation programs, and kept a strong technical core (AI/ML, cloud, architecture) to make strategy executable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="mb-12 animate-fade-in" style="animation-delay: 0.1s;">
+        <div class="card">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Experience</h2>
+            <div class="space-y-8">
+                {{ range .Site.Data.experiences }}
+                <div class="timeline-item">
+                    <div class="mb-2">
+                        <h3 class="text-xl font-semibold text-gray-900">{{ .role }}</h3>
+                        <div class="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+                            <span class="font-medium">{{ .company }}</span>
+                            <span>•</span>
+                            <span>{{ .time }}</span>
+                        </div>
+                    </div>
+                    <div class="prose prose-sm max-w-none text-gray-700">
+                        {{ .details | markdownify }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-12 animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="card">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Education</h2>
+            <div class="space-y-6">
+                {{ range .Site.Data.education }}
+                <div class="border-l-4 border-primary-600 pl-6">
+                    <h3 class="text-lg font-semibold text-gray-900">{{ .degree }}</h3>
+                    <div class="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-2">
+                        <span class="font-medium">{{ .university }}</span>
+                        <span>•</span>
+                        <span>{{ .time }}</span>
+                    </div>
+                    {{ if .details }}
+                    <p class="text-sm text-gray-700">{{ .details }}</p>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="mb-12 animate-fade-in" style="animation-delay: 0.3s;">
+        <div class="card">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                {{ range .Site.Data.projects.assignments }}
+                <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ .title }}</h3>
+                    <p class="text-sm text-gray-700">{{ .tagline }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-12 animate-fade-in" style="animation-delay: 0.4s;">
+        <div class="card">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {{ range .Site.Data.skills.toolset }}
+                <div class="bg-gray-50 rounded-lg px-4 py-3">
+                    <span class="text-sm font-medium text-gray-900">{{ .name }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</div>
+{{ end }}

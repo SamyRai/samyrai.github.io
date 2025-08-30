@@ -1,0 +1,57 @@
+baseURL = 'https://samyrai.github.io/'
+languageCode = 'en-us'
+title = 'Damir Mukimov - Technology Leader'
+theme = 'resume-theme'
+
+[params]
+  description = 'Technology leader with 15+ years in software and 10+ years building and leading engineering orgs'
+  author = 'Damir Mukimov'
+  email = 'mukimov.d@gmail.com'
+  phone = '+49 152 02328598'
+  website = 'mukimov.com'
+  linkedin = 'mukimov'
+  github = 'SamyRai'
+  pdf = '/assets/mukimov_cv.pdf'
+  
+  # Theme settings
+  theme_skin = 'blue' # blue, turquoise, green, berry, orange, ceramic
+  enable_analytics = false
+  analytics_id = ''
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'github'
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    noHl = false
+    tabWidth = 4
+    guessSyntax = false
+
+[build]
+  writeStats = true
+
+[server]
+  port = 1313
+  bind = '0.0.0.0'
+
+[security]
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^babel$']
+    osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = 'application/rss'
+    baseName = 'feed'
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+  taxonomy = ['HTML', 'RSS']
+  term = ['HTML', 'RSS']

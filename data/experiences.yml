@@ -1,0 +1,66 @@
+- role: "Founder & Technology Lead"
+  time: "10.2022 - Present"
+  company: "Independent / Consulting"
+  details: |
+    - Define and execute technology roadmaps for clients (AI/ML adoption, cloud modernization, platform engineering).
+    - Set up engineering operating models: delivery cadences, SLOs/SLIs, incident response, and risk/governance.
+    - Establish pragmatic engineering excellence playbooks (CI/CD baselines, code health, testing standards) that teams can sustain.
+    - Align architecture and investment with business outcomes; de-risk initiatives via spikes and phased delivery.
+
+- role: "Founder (Cohort Participant)"
+  time: "08.2022 - 10.2022"
+  company: "Antler Startup Accelerator"
+  details: |
+    - Developed investor-ready problem/solution fit, GTM, and technical architecture under time-boxed cohort constraints.
+    - Drove validation through customer discovery, rapid prototyping, and financial modeling.
+
+- role: "Engineering Manager"
+  time: "09.2020 - 07.2022"
+  company: "Homeday GmbH"
+  details: |
+    - Led a cross-functional org of 5–8 engineers; set direction, hiring bar, feedback loops, and growth paths.
+    - Partnered with product/design to focus roadmaps on measurable outcomes; cleared delivery bottlenecks.
+    - Raised engineering baseline: CI/CD, observability, test strategy, on-call playbooks.
+
+- role: "Engineering Manager"
+  time: "09.2020 - 07.2022"
+  company: "Homeday GmbH"
+  details: |
+    - Ran two cross-functional teams (~5–8 engineers); owned hiring, coaching, and day-to-day execution.
+    - Designed org structure and ways-of-working: planning cadence, WIP limits, incident/on-call routines.
+    - Stood up the QA function from zero: defined charter, hiring requirements and bar, interview loops, and onboarding.
+    - Introduced practical CI/CD, test strategy, and observability; removed bottlenecks and increased release frequency.
+
+- role: "Lead Fullstack Developer"
+  time: "05.2018 - 12.2018"
+  company: "GetSafe GmbH"
+  details: |
+    - Drove org-level agile/DevOps adoption; simplified delivery pipelines and trimmed avoidable toil.
+    - Modernized service boundaries and deployment practices to stabilize releases.
+
+- role: "Chief Technology Officer (CTO)"
+  time: "04.2017 - 05.2018"
+  company: "Mind Intelligence UG"
+  details: |
+    - Founded and led technology under EXIST grant; set vision and technical roadmap for AI/ML platform.
+    - Built early team, partnerships, and commercialization pathways.
+
+- role: "Ruby on Rails Developer"
+  time: "04.2015 - 03.2017"
+  company: "Distribusion Technologies GmbH"
+  details: |
+    - Modernized API architecture for international expansion; improved reliability and partner onboarding.
+    - Built and led remote contributors; instituted code review and CI norms.
+
+- role: "Ruby on Rails Developer"
+  time: "10.2014 - 04.2015"
+  company: "OOO \"Sirena-Bus\""
+  details: |
+    - Delivered full-stack features and automated infra; introduced deployment automation and monitoring.
+
+- role: "Research Associate & Project Manager"
+  time: "10.2012 - 09.2014"
+  company: "National Research University of Electronic Technology (MIET)"
+  details: |
+    - Ran end-to-end embedded/sensor research projects from planning to delivery and tech transfer.
+    - Built partnerships and secured funding; formalized team workflows.
