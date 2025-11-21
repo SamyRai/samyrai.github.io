@@ -2,17 +2,17 @@
 title: "Hugo Mastery Part 2: Module System & Advanced Configuration"
 date: "2025-11-21"
 draft: false
-[author]
-name: "Damir Mukimov"
-email: ""
+author:
+  name: "Damir Mukimov"
+  email: ""
 tags: ["Hugo", "Modules", "Configuration", "YAML", "Advanced"]
 categories: ["Technology", "Web Development"]
 sources: []
 description: "Master Hugo's module system and advanced configuration patterns, including YAML anchors, version control, and environment-specific setups."
 summary: "Explore Hugo's powerful module system, learn to use YAML anchors for DRY configuration, and implement advanced patterns for complex sites."
-[params]
-reading_time = true
-featured_image = ""
+params:
+  reading_time: true
+  featured_image: ""
 ---
 
 ## Introduction

@@ -2,17 +2,17 @@
 title: "Hugo Mastery Part 3: Latest Features & What's New in 2024"
 date: "2025-11-21"
 draft: false
-[author]
-name: "Damir Mukimov"
-email: ""
+author:
+  name: "Damir Mukimov"
+  email: ""
 tags: ["Hugo", "Updates", "Features", "2024", "Modern Web"]
 categories: ["Technology", "Web Development"]
 sources: []
 description: "Explore the latest features in Hugo v0.152.x, including YAML anchors, transform.HTMLToMarkdown, collections.D, and other powerful new capabilities."
 summary: "Stay up-to-date with Hugo's latest features from 2024, including YAML library upgrades, new template functions, and performance improvements."
-[params]
-reading_time = true
-featured_image = ""
+params:
+  reading_time: true
+  featured_image: ""
 ---
 
 ## Introduction

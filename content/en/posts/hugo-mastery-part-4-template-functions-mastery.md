@@ -2,17 +2,17 @@
 title: "Hugo Mastery Part 4: Template Functions Mastery"
 date: "2025-11-21"
 draft: false
-[author]
-name: "Damir Mukimov"
-email: ""
+author:
+  name: "Damir Mukimov"
+  email: ""
 tags: ["Hugo", "Templates", "Functions", "Web Development", "Go Templates"]
 categories: ["Technology", "Web Development"]
 sources: []
 description: "Master Hugo's 200+ template functions with practical examples, performance tips, and advanced patterns for building dynamic static sites."
 summary: "Complete guide to Hugo template functions, from basic string manipulation to advanced content transformation, with real-world examples and performance optimization."
-[params]
-reading_time = true
-featured_image = ""
+params:
+  reading_time: true
+  featured_image: ""
 ---
 
 ## Introduction

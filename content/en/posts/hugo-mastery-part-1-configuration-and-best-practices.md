@@ -2,17 +2,17 @@
 title: "Hugo Mastery Part 1: Configuration & Best Practices for Production Sites"
 date: "2025-11-21"
 draft: false
-[author]
-name: "Damir Mukimov"
-email: ""
+author:
+  name: "Damir Mukimov"
+  email: ""
 tags: ["Hugo", "Static Site Generator", "Web Development", "Configuration", "Best Practices"]
 categories: ["Technology", "Web Development"]
 sources: []
 description: "A comprehensive guide to Hugo configuration and production best practices, covering essential settings, performance optimization, and deployment strategies."
 summary: "Learn how to configure Hugo for production with best practices for performance, SEO, security, and deployment. This guide covers everything from basic setup to advanced optimization techniques."
-[params]
-reading_time = true
-featured_image = ""
+params:
+  reading_time: true
+  featured_image: ""
 ---
 
 ## Introduction
