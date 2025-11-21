@@ -72,13 +72,14 @@
 /* CV Hero Section - Career Profile */
 .cv-hero {
   position: relative;
-  background: linear-gradient(135deg, 
-    color-mix(in srgb, var(--color-primary) 34%, white) 0%, 
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--color-primary) 34%, white) 0%,
     color-mix(in srgb, var(--color-primary-dark) 34%, white) 100%);
   color: var(--color-gray-900);
   padding: var(--space-16) var(--space-8) var(--space-12);
   margin-block-start: var(--space-8);
-  margin-inline: calc(var(--space-6) * -1);
+  margin-inline-start: var(--space-6);
+  margin-inline-end: calc(var(--space-6) * -1);
   margin-block-end: var(--space-12);
   border-radius: var(--radius-xl);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
