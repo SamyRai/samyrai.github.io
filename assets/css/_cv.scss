@@ -72,16 +72,18 @@
 /* CV Hero Section - Career Profile */
 .cv-hero {
   position: relative;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: var(--color-white);
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--color-primary) 34%, white) 0%, 
+    color-mix(in srgb, var(--color-primary-dark) 34%, white) 100%);
+  color: var(--color-gray-900);
   padding: var(--space-16) var(--space-8) var(--space-12);
   margin-block-start: var(--space-8);
   margin-inline: calc(var(--space-6) * -1);
   margin-block-end: var(--space-12);
   border-radius: var(--radius-xl);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
-              0 10px 10px -5px rgba(0, 0, 0, 0.1),
-              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.05),
+              0 0 0 1px rgba(0, 0, 0, 0.05) inset;
   overflow: hidden;
   transition: background var(--transition-base);
 
@@ -90,8 +92,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at top right, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -103,10 +105,10 @@
     inset-inline-end: 0;
     block-size: 4px;
     background: linear-gradient(90deg,
-      var(--color-primary-light) 0%,
-      var(--color-white) 50%,
-      var(--color-primary-light) 100%);
-    opacity: 0.6;
+      color-mix(in srgb, var(--color-primary) 60%, white) 0%,
+      color-mix(in srgb, var(--color-primary) 40%, white) 50%,
+      color-mix(in srgb, var(--color-primary) 60%, white) 100%);
+    opacity: 0.8;
   }  @include mobile {
     padding: var(--space-8) var(--space-4);
     margin-inline: calc(var(--space-4) * -1);
@@ -124,16 +126,16 @@
 .cv-hero__badge {
   display: inline-block;
   padding: var(--space-2) var(--space-5);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-gray-700);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-block-end: var(--space-5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   @include mobile {
     font-size: var(--font-size-xs);
@@ -144,7 +146,7 @@
 .cv-hero__headline {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-white);
+  color: var(--color-gray-900);
   margin-block-end: var(--space-8);
   line-height: var(--line-height-tight);
   letter-spacing: -0.03em;
@@ -172,17 +174,17 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-5);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   border-radius: var(--radius-lg);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
-  color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-gray-800);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all var(--transition-base);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.7);
     transform: translateY(-2px);
   }
 
@@ -206,7 +208,7 @@
 .cv-hero__description {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-gray-700);
   max-inline-size: 900px;
 
   p {
