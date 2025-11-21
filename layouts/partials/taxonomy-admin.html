@@ -1,0 +1,36 @@
+{{/* Admin-only taxonomy overview of categories & tags */}}
+{{ if .Site.Params.showTaxonomyAdmin }}
+<section class="taxonomy-admin">
+  <h3>Taxonomy Overview</h3>
+  <div class="taxonomy-grid">
+    <div class="taxonomy-section">
+      <h4>Categories ({{ len .Site.Taxonomies.categories }})</h4>
+      <ul>
+      {{ range $term, $taxonomy := .Site.Taxonomies.categories }}
+        <li>
+          <a href="/categories/{{ $term | urlize }}/">{{ $term }}</a>
+          <span class="post-count"> — {{ len $taxonomy.Pages }} posts</span>
+          {{ with index $taxonomy.Pages 0 }}
+          <div class="latest-post">Latest: <a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          {{ end }}
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+    <div class="taxonomy-section">
+      <h4>Tags ({{ len .Site.Taxonomies.tags }})</h4>
+      <ul>
+      {{ range $term, $taxonomy := .Site.Taxonomies.tags }}
+        <li>
+          <a href="/tags/{{ $term | urlize }}/">{{ $term }}</a>
+          <span class="post-count"> — {{ len $taxonomy.Pages }} posts</span>
+          {{ with index $taxonomy.Pages 0 }}
+          <div class="latest-post">Latest: <a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          {{ end }}
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
+{{ end }}

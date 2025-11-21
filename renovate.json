@@ -1,0 +1,97 @@
+{
+  "extends": [
+    "config:base",
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    "group:recommended"
+  ],
+  "timezone": "UTC",
+  "schedule": [
+    "before 6am on monday"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "assignees": [
+    "@yourusername"
+  ],
+  "reviewers": [
+    "@yourusername"
+  ],
+  "lock_file_maintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on first day of month"
+    ]
+  },
+  "package_rules": [
+    {
+      "description": "Group JavaScript/TypeScript core",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "next",
+        "vue",
+        "nuxt",
+        "typescript",
+        "eslint",
+        "prettier",
+        "webpack",
+        "vite"
+      ],
+      "groupName": "JavaScript/TypeScript core",
+      "automerge": false
+    },
+    {
+      "description": "Group Node.js utilities",
+      "matchPackageNames": [
+        "lodash",
+        "axios",
+        "express",
+        "socket.io",
+        "moment",
+        "chalk",
+        "commander",
+        "inquirer",
+        "ora",
+        "yargs"
+      ],
+      "groupName": "Node.js utilities",
+      "automerge": true
+    },
+    {
+      "description": "Pin Node.js to LTS",
+      "matchPackageNames": [
+        "node"
+      ],
+      "allowedVersions": "/^(16|18|20)\\./",
+      "automerge": true
+    }
+  ],
+  "vulnerability_alerts": {
+    "enabled": true,
+    "schedule": [
+      "at any time"
+    ],
+    "labels": [
+      "security"
+    ]
+  },
+  "osv_vulnerability_alerts": true,
+  "pr_concurrent_limit": 10,
+  "pr_hourly_limit": 5,
+  "branch_prefix": "renovate/",
+  "commit_message_prefix": "\ud83d\udd27",
+  "semantic_commits": "enabled",
+  "separate_minor_patch": true,
+  "separate_major_minor": false,
+  "master_issue": true,
+  "suppress_notifications": [
+    "prEditedNotification"
+  ],
+  "dependency_dashboard": true,
+  "dependency_dashboard_title": "\ud83d\udce6 Dependency Updates Dashboard",
+  "dependency_dashboard_header": "This dashboard shows all pending dependency updates for this repository.",
+  "dependency_dashboard_footer": "To approve a PR, comment with `@renovate merge` or use the GitHub review UI.",
+  "platform_automerge": true
+}

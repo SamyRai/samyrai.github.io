@@ -1,0 +1,23 @@
+{{/*
+  A developer/admin-only partial to inspect version content files stored with the post bundle.
+  This partial will be included only when `params.showVersionsAdmin` is true (default false).
+*/}}
+
+{{ if and .Params.version_content_files .Site.Params.showVersionsAdmin }}
+<section class="versions-admin">
+  <h3>Versions (raw sources)</h3>
+  <div class="versions-list">
+    {{ range .Params.version_content_files }}
+      {{ $res := . }}
+      <div class="version-item">
+        <h4>File: {{ $res }}</h4>
+        <p class="file-note">This markdown file is not rendered. Store platform-specific text here for reference.</p>
+        {{ with $.Site.Params.github_repo }}
+          {{ $filePath := printf "%s/%s" $.File.Dir $res }}
+          <p class="edit-link"><a href="https://github.com/{{ . }}/edit/{{ $.Site.Params.branch | default "master" }}/{{ $filePath }}">Edit on GitHub</a></p>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

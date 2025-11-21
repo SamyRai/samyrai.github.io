@@ -1,0 +1,8 @@
+{{- $post := dict "title" .Title "url" .Permalink "date" (.Date.Format "2006-01-02T15:04:05Z07:00") "lastmod" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "summary" (.Summary | plainify) "description" .Params.description "content" (.Content | plainify) "tags" (.Params.tags | default slice) "categories" (.Params.categories | default slice) "author" (.Params.author | default slice) "readingTime" .ReadingTime "wordCount" .WordCount "language" .Language.Lang "featuredImage" .Params.featured_image "tableOfContents" .TableOfContents -}}
+{{- $relatedPosts := slice -}}
+{{- range first 5 (.Site.RegularPages.Related .) -}}
+  {{- $related := dict "title" .Title "url" .Permalink "date" (.Date.Format "2006-01-02") -}}
+  {{- $relatedPosts = $relatedPosts | append $related -}}
+{{- end -}}
+{{- $post = merge $post (dict "related" $relatedPosts) -}}
+{{- $post | jsonify (dict "indent" "  ") -}}

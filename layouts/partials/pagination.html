@@ -1,0 +1,80 @@
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination" aria-label="Pagination Navigation">
+    <ul>
+        {{ if $paginator.HasPrev }}
+        <li>
+            <a href="{{ $paginator.First.URL }}"
+               class="pagination-btn"
+               aria-label="First page">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="{{ $paginator.Prev.URL }}"
+               class="pagination-btn"
+               aria-label="Previous page">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </a>
+        </li>
+        {{ end }}
+
+        {{ $currentPage := $paginator.PageNumber }}
+        {{ $totalPages := $paginator.TotalPages }}
+        {{ range $paginator.Pagers }}
+            {{ $showPage := false }}
+            {{ if or (le .PageNumber 2) (ge .PageNumber (sub $totalPages 1)) }}
+                {{ $showPage = true }}
+            {{ else if and (ge .PageNumber (sub $currentPage 1)) (le .PageNumber (add $currentPage 1)) }}
+                {{ $showPage = true }}
+            {{ end }}
+
+            {{ if $showPage }}
+            <li>
+                <a href="{{ .URL }}"
+                   class="pagination-number {{ if eq .PageNumber $currentPage }}active{{ end }}"
+                   {{ if eq .PageNumber $currentPage }}aria-current="page"{{ end }}
+                   aria-label="Page {{ .PageNumber }}">
+                    {{ .PageNumber }}
+                </a>
+            </li>
+            {{ else if or (eq .PageNumber 3) (eq .PageNumber (sub $totalPages 2)) }}
+                {{ if or (and (eq .PageNumber 3) (gt $currentPage 4)) (and (eq .PageNumber (sub $totalPages 2)) (lt $currentPage (sub $totalPages 3))) }}
+                <li>
+                    <span class="pagination-ellipsis">...</span>
+                </li>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ if $paginator.HasNext }}
+        <li>
+            <a href="{{ $paginator.Next.URL }}"
+               class="pagination-btn"
+               aria-label="Next page">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="{{ $paginator.Last.URL }}"
+               class="pagination-btn"
+               aria-label="Last page">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+
+    <div class="pagination-info">
+        Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+    </div>
+</nav>
+{{ end }}

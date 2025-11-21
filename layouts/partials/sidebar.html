@@ -1,151 +1,141 @@
-<aside class="sidebar fixed top-0 left-0 w-96 h-full z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300" id="sidebar">
-    <div class="h-full flex flex-col">
+<aside class="sidebar" id="sidebar" data-state="closed">
+    <div class="sidebar-content">
+        <!-- Close button for mobile -->
+        <button type="button" class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
         <!-- Profile Section -->
-        <div class="sidebar-profile p-8 text-white">
-            <div class="text-center">
-                <!-- Profile Image -->
-                <div class="mb-6">
-                    <img src="{{ "images/profile.png" | absURL }}" alt="{{ .Site.Params.author }}" 
-                         class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg object-cover">
-                </div>
-                
-                <!-- Name and Tagline -->
-                <h1 class="text-2xl font-bold mb-2">{{ .Site.Params.author }}</h1>
-                <p class="text-primary-100 text-sm leading-relaxed">
-                    Technology Leader · Engineering Management · AI/Cloud
-                </p>
+        <div class="sidebar-profile">
+            <div class="profile-image-wrapper">
+                <img src="{{ "images/profile.png" | absURL }}" alt="{{ .Site.Params.author }}"
+                     class="profile-image">
             </div>
+            <h1 class="profile-name">{{ .Site.Params.author }}</h1>
+            <p class="profile-tagline">
+                Technology Leader · Engineering Management · AI/Cloud
+            </p>
         </div>
-        
+
         <!-- Contact Information -->
-        <div class="sidebar-section p-6">
-            <h2 class="sidebar-title text-lg font-semibold mb-4">Contact</h2>
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Contact</h2>
             <div class="contact-list">
                 {{ if .Site.Params.email }}
-                <div class="contact-item">
-                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                <a href="mailto:{{ .Site.Params.email }}" class="contact-item">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                     </svg>
-                    <a href="mailto:{{ .Site.Params.email }}" class="contact-link">
-                        {{ .Site.Params.email }}
-                    </a>
-                </div>
+                    <span class="contact-text">{{ .Site.Params.email }}</span>
+                </a>
                 {{ end }}
-                
+
                 {{ if .Site.Params.phone }}
-                <div class="contact-item">
-                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                <a href="tel:{{ .Site.Params.phone }}" class="contact-item">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
-                    <a href="tel:{{ .Site.Params.phone }}" class="contact-link">
-                        {{ .Site.Params.phone }}
-                    </a>
-                </div>
+                    <span class="contact-text">{{ .Site.Params.phone }}</span>
+                </a>
                 {{ end }}
-                
+
                 {{ if .Site.Params.website }}
-                <div class="contact-item">
-                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                <a href="https://{{ .Site.Params.website }}" target="_blank" rel="noopener" class="contact-item">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
-                    <a href="https://{{ .Site.Params.website }}" target="_blank" rel="noopener" class="contact-link">
-                        {{ .Site.Params.website }}
-                    </a>
-                </div>
+                    <span class="contact-text">{{ .Site.Params.website }}</span>
+                </a>
                 {{ end }}
             </div>
         </div>
-        
+
         <!-- Social Links -->
-        <div class="sidebar-section p-6">
-            <h2 class="sidebar-title text-lg font-semibold mb-4">Social</h2>
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Social</h2>
             <div class="social-links">
                 {{ if .Site.Params.linkedin }}
-                <a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank" rel="noopener" 
+                <a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank" rel="noopener"
                    class="social-link" aria-label="LinkedIn">
-                    <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                 </a>
                 {{ end }}
-                
+
                 {{ if .Site.Params.github }}
-                <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener" 
+                <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener"
                    class="social-link" aria-label="GitHub">
-                    <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
                 {{ end }}
             </div>
         </div>
-        
+
+            <!-- Tags & Categories removed from the main sidebar. Use the blog section for blog-specific navigation. -->
+
         <!-- Languages -->
-        <div class="sidebar-section p-6">
-            <h2 class="sidebar-title text-lg font-semibold mb-4">Languages</h2>
-            <div class="space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-sm text-gray-700">Russian</span>
-                    <span class="text-xs text-gray-500">Native</span>
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Languages</h2>
+            <div class="language-list">
+                <div class="language-item">
+                    <span class="language-name">Russian</span>
+                    <span class="language-level">Native</span>
                 </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-sm text-gray-700">English</span>
-                    <span class="text-xs text-gray-500">Professional</span>
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Professional</span>
                 </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-sm text-gray-700">German</span>
-                    <span class="text-xs text-gray-500">B2 certified</span>
+                <div class="language-item">
+                    <span class="language-name">German</span>
+                    <span class="language-level">B2 certified</span>
                 </div>
             </div>
         </div>
-        
+
         <!-- Interests -->
-        <div class="sidebar-section p-6 flex-1">
-            <h2 class="sidebar-title text-lg font-semibold mb-4">Interests</h2>
-            <div class="space-y-2">
-                <div class="text-sm text-gray-700">Videography/Photography</div>
-                <div class="text-sm text-gray-700">Piloting</div>
-                <div class="text-sm text-gray-700">Cooking</div>
+        <div class="sidebar-section sidebar-flex">
+            <h2 class="sidebar-title">Interests</h2>
+            <div class="interest-list">
+                <div class="interest-item">Videography/Photography</div>
+                <div class="interest-item">Piloting</div>
+                <div class="interest-item">Cooking</div>
             </div>
         </div>
-        
+
+        <!-- Site Languages -->
+        <div class="sidebar-section">
+            <h2 class="sidebar-title">Site Language</h2>
+            <div class="language-switcher">
+                <a href="/en/" class="language-link">English</a>
+                <a href="/de/" class="language-link">Deutsch</a>
+            </div>
+        </div>
+
         <!-- Download CV -->
         {{ if .Site.Params.pdf }}
-        <div class="sidebar-section p-6">
-            <a href="{{ .Site.Params.pdf }}" target="_blank" rel="noopener" 
-               class="w-full btn-primary text-center block">
-                Download CV
+        <div class="sidebar-section sidebar-footer">
+            <a href="{{ .Site.Params.pdf }}" target="_blank" rel="noopener" class="btn-download">
+                {{ i18n "download_cv" }}
             </a>
         </div>
         {{ end }}
     </div>
 </aside>
 
+<!-- Mobile overlay -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
 <!-- Mobile menu button -->
-<button class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-primary-600 text-white rounded-lg shadow-lg" 
-        onclick="toggleSidebar()" aria-label="Toggle menu">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu">
+    <svg class="icon icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+    <svg class="icon icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
     </svg>
 </button>
-
-<!-- Mobile overlay -->
-<div id="sidebar-overlay" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSidebar()"></div>
-
-<script>
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-    
-    if (sidebar.classList.contains('-translate-x-full')) {
-        sidebar.classList.remove('-translate-x-full');
-        overlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    } else {
-        sidebar.classList.add('-translate-x-full');
-        overlay.classList.add('hidden');
-        document.body.style.overflow = '';
-    }
-}
-</script>

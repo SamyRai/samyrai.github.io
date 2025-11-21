@@ -1,0 +1,26 @@
+title: "Ausgewählte Projekte"
+intro: ""
+assignments:
+  - title: "Sichere On-Prem-KI/Automatisierungsplattform (2023–2024)"
+    link: "#"
+    tagline: "Private, air-gapped Automatisierungsplattform auf Talos/NixOS-Clustern mit GPU-Beschleunigung designed und geliefert. Dokumentenextraktion, Klassifizierung, Routing und event-getriebene Workflows für regulierte Kunden implementiert."
+
+  - title: "Private Daten- & Event-Pipeline-Architektur (2022–2024)"
+    link: "#"
+    tagline: "Strukturierte Ingestion- und Verarbeitungspipelines mit Schema-Validierung, Routing und ML-basierter Anreicherung erstellt. Bildete das Rückgrat für mehrere Automatisierungs- und Analytics-Workflows."
+
+  - title: "0→1 QA- & Engineering-Excellence-Framework (2021–2022)"
+    link: "#"
+    tagline: "Einheitliches Qualitäts- und Delivery-Framework für zwei Engineering-Teams definiert. Teststrategie, Qualitätsmetriken und Prozesse für eine neue QA-Abteilung etabliert."
+
+  - title: "Smart-Building-Automatisierung (Hotel- & Office-Installationen)"
+    link: "#"
+    tagline: "Smart-Building-Systeme (Beleuchtung, HVAC, Sensoren, Controller) installiert und konfiguriert. Inbetriebnahme, Device-Provisioning, Multi-Vendor-Integration und Troubleshooting in Live-Umgebungen verwaltet."
+
+  - title: "Wearable-Device-Prototyping"
+    link: "#"
+    tagline: "An der Entwicklung eines Wearable-Devices durch Embedded-Prototyping, Sensor-Evaluation, BLE-Kommunikationstests und Usability-Assessment unter engen Hardware-Beschränkungen mitgewirkt."
+
+  - title: "Embedded-Navigation & Sensing-F&E (2012–2014)"
+    link: "#"
+    tagline: "Mehrjährige angewandte Forschung zu MEMS/Beschleunigungssensor-basierter Sensorik und eingebetteten Navigationssystemen geliefert, einschließlich Prototyping, Testing, Performance-Charakterisierung und externem Reporting."

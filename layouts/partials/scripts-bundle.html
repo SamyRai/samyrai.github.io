@@ -1,0 +1,31 @@
+{{- /*
+  Modern JavaScript bundling with optimization
+  Bundles all scripts efficiently based on environment
+*/ -}}
+
+{{- $scripts := slice -}}
+
+{{- /* Core scripts */ -}}
+{{- $scripts = $scripts | append (resources.Get "js/animations.js") -}}
+{{- $scripts = $scripts | append (resources.Get "js/sidebar.js") -}}
+{{- $scripts = $scripts | append (resources.Get "js/smooth-scroll.js") -}}
+{{- $scripts = $scripts | append (resources.Get "js/floating-controls.js") -}}
+{{- $scripts = $scripts | append (resources.Get "js/main.js") -}}
+
+{{- /* Add filter script for blog pages */ -}}
+{{- if eq .Section "posts" -}}
+  {{- $scripts = $scripts | append (resources.Get "js/filter-posts.js") -}}
+  {{- $scripts = $scripts | append (resources.Get "js/search.js") -}}
+{{- end -}}
+
+{{- if hugo.IsProduction -}}
+  {{- /* Production: bundle, minify, and fingerprint */ -}}
+  {{- $bundle := $scripts | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha512" -}}
+  <script src="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{- else -}}
+  {{- /* Development: individual files for better debugging */ -}}
+  {{- range $scripts -}}
+    {{- $script := . | resources.Minify | resources.Fingerprint -}}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{- end -}}
+{{- end -}}

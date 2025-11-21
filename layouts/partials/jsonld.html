@@ -1,0 +1,30 @@
+{{ if .IsPage }}
+<script type="application/ld+json">
+{{- $author := .Site.Params.author -}}
+{{- with .Params.author -}}
+  {{- if in (printf "%T" .) "[]" -}}
+    {{- $author = index . 0 -}}
+  {{- else -}}
+    {{- $author = . -}}
+  {{- end -}}
+{{- end -}}
+{{- $image := (or .Params.featured_image (printf "%simages/profile.png" .Site.BaseURL)) -}}
+{{- $desc := or .Params.description .Summary -}}
+{{- /* Escape for safe JSON embedding */ -}}
+{{- $dateModified := .Date -}}
+{{- with .Lastmod }}{{ $dateModified = . }}{{ end -}}
+{{- $j := dict "@context" "https://schema.org" "@type" "Article" "headline" (.Title | htmlEscape) "image" (slice ($image | absURL)) "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" ($dateModified.Format "2006-01-02T15:04:05Z07:00") "author" (slice (dict "@type" "Person" "name" $author)) "publisher" (dict "@type" "Organization" "name" .Site.Params.author "logo" (dict "@type" "ImageObject" "url" (printf "%simages/profile.png" .Site.BaseURL))) "description" ($desc | htmlEscape) "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink) -}}
+{{- /* Add sameAs references to versions for social platforms, if provided */ -}}
+{{- $sameAs := slice -}}
+{{- range .Params.versions }}
+  {{- if .url -}}
+    {{- $sameAs = $sameAs | append (printf "%s" .url) -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $sameAs) 0 -}}
+  {{- $j = merge $j (dict "sameAs" $sameAs) -}}
+{{- end -}}
+{{- $json := $j | jsonify -}}
+{{ $json }}
+</script>
+{{ end }}

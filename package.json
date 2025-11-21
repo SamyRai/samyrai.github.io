@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "description": "Modern resume website built with Hugo and Tailwind CSS",
   "scripts": {
-    "dev": "./node_modules/.bin/hugo server --config hugo.toml --buildDrafts --buildFuture",
-    "build": "hugo --minify",
-    "build:production": "hugo --minify --environment production"
+    "dev": "hugo server --buildDrafts --buildFuture",
+    "build": "hugo --minify && node generate-pdf.js",
+    "build:production": "hugo --minify --environment production && node generate-pdf.js",
+    "clean": "rm -rf public resources"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "hugo-extended": "^0.88.1",
+    "puppeteer": "^24.31.0",
+    "tailwindcss": "^4.1.14",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
     "postcss-cli": "^11.0.0",
-    "tailwindcss": "^4.1.12"
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "cssnano": "^6.0.2"
   },
   "keywords": [
     "hugo",
@@ -21,5 +25,10 @@
     "tailwindcss"
   ],
   "author": "Damir Mukimov",
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
 }

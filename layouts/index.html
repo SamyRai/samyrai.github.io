@@ -1,9 +1,117 @@
 {{ define "main" }}
-<div class="container mx-auto px-6 py-8">
-    {{ partial "career-profile.html" . }}
-    {{ partial "experience.html" . }}
-    {{ partial "education.html" . }}
-    {{ partial "projects.html" . }}
-    {{ partial "skills.html" . }}
+<div class="cv-container">
+    <!-- Career Profile Hero -->
+    <section class="cv-hero animate-fade-in" aria-labelledby="career-title">
+        <div class="cv-hero__content">
+            <span class="cv-hero__badge">{{ i18n "career_profile" }}</span>
+            <h1 id="career-title" class="cv-hero__headline">
+                {{ if eq .Site.Language.Lang "de" }}
+                    Technologie- & Engineering-Leader
+                {{ else }}
+                    Technology & Engineering Leader
+                {{ end }}
+            </h1>
+            <div class="cv-hero__highlights">
+                <div class="cv-hero__highlight">
+                    <svg class="cv-hero__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{{ if eq .Site.Language.Lang "de" }}12+ Jahre Erfahrung{{ else }}12+ Years Experience{{ end }}</span>
+                </div>
+                <div class="cv-hero__highlight">
+                    <svg class="cv-hero__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span>IoT • {{ if eq .Site.Language.Lang "de" }}Angewandte KI/ML{{ else }}Applied AI/ML{{ end }}</span>
+                </div>
+                <div class="cv-hero__highlight">
+                    <svg class="cv-hero__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span>{{ if eq .Site.Language.Lang "de" }}Multi-Team Leadership{{ else }}Multi-Team Leadership{{ end }}</span>
+                </div>
+            </div>
+            <div class="cv-hero__description">
+                {{ (index .Site.Data .Site.Language.Lang).career.text | markdownify }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="cv-section animate-fade-in" style="animation-delay: 0.1s;" aria-labelledby="experience-title">
+        <h2 id="experience-title">{{ i18n "experience" }}</h2>
+        <div style="display: flex; flex-direction: column;">
+            {{ range (index .Site.Data .Site.Language.Lang).experiences }}
+            <article class="cv-card">
+                <header style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+                    <div>
+                        <h3>{{ .role }}</h3>
+                        <p class="cv-company">{{ .company }}</p>
+                    </div>
+                    <time class="cv-date">{{ .time }}</time>
+                </header>
+                <div class="prose prose-sm max-w-none">
+                    {{ .details | markdownify }}
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section animate-fade-in" style="animation-delay: 0.2s;" aria-labelledby="education-title">
+        <h2 id="education-title">{{ i18n "education" }}</h2>
+        <div class="cv-card">
+            <div class="cv-grid">
+                {{ range (index .Site.Data .Site.Language.Lang).education }}
+                <article>
+                    <h3>{{ .degree }}</h3>
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span class="cv-company">{{ .university }}</span>
+                        <span aria-hidden="true">·</span>
+                        <time class="cv-date">{{ .time }}</time>
+                    </div>
+                    {{ if .details }}
+                    <p style="margin-top: 0.5rem;">{{ .details }}</p>
+                    {{ end }}
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="cv-section animate-fade-in" style="animation-delay: 0.3s;" aria-labelledby="projects-title">
+        <h2 id="projects-title">{{ i18n "projects" }}</h2>
+        <div class="cv-grid">
+            {{ range (index .Site.Data .Site.Language.Lang).projects.assignments }}
+            <article class="cv-competency">
+                <h3>{{ .title }}</h3>
+                <p>{{ .tagline }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="cv-section animate-fade-in" style="animation-delay: 0.4s;" aria-labelledby="skills-title">
+        <h2 id="skills-title">{{ i18n "skills" }}</h2>
+        <div class="cv-card">
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                {{ range (index .Site.Data .Site.Language.Lang).skills.categories }}
+                <div>
+                    <h3 style="margin-bottom: 1rem;">{{ .name }}</h3>
+                    <ul style="display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0;" role="list">
+                        {{ range .skills }}
+                        <li class="skill-badge">
+                            {{ . }}
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
 </div>
 {{ end }}

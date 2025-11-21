@@ -1,0 +1,77 @@
+[career_profile]
+other = "Karriereprofil"
+
+[experience]
+other = "Erfahrung"
+
+[education]
+other = "Ausbildung"
+
+[projects]
+other = "Projekte"
+
+[skills]
+other = "Fähigkeiten"
+
+[skip_to_main]
+other = "Zum Hauptinhalt springen"
+
+[home]
+other = "Startseite"
+
+[related_posts]
+other = "Ähnliche Beiträge"
+
+[table_of_contents]
+other = "Inhaltsverzeichnis"
+
+[read_more]
+other = "Weiterlesen"
+
+[reading_time]
+other = "{{ .ReadingTime }} Min. Lesezeit"
+
+[items]
+other = "Elemente"
+
+[download_cv]
+other = "CV herunterladen"
+
+[tags]
+other = "Tags"
+
+[categories]
+other = "Kategorien"
+
+[author]
+other = "Autor"
+
+[share]
+other = "Teilen"
+
+[sources]
+other = "Quellen"
+
+[bibliography]
+other = "Referenzen"
+
+[versions]
+other = "Versionen"
+
+[blog]
+other = "Blog"
+
+[cv]
+other = "Lebenslauf"
+
+[view_cv]
+other = "Lebenslauf ansehen"
+
+[view_blog]
+other = "Blog ansehen"
+
+[change_language]
+other = "Sprache wechseln"
+
+[change_theme]
+other = "Design wechseln"

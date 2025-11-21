@@ -1,0 +1,62 @@
+- role: "Gründer & Technologieleiter"
+  time: "2022 - Gegenwart"
+  company: "Unabhängig / Beratung · Berlin"
+  details: |
+    - Technologiestrategie, Plattform-Engineering und KI/ML-Adoption für Kunden in regulierten, datenschutzsensiblen Umgebungen leiten.
+    - Sichere On-Prem-KI- und Automatisierungsplattformen mit Talos/NixOS-Clustern, GPUs, verschlüsseltem Mesh-Networking und event-getriebenen Workflows aufgebaut.
+    - Private Inference- und Dokumentenautomatisierungssysteme mit Klassifizierung, Routing, Extraktion und Workflow-Orchestrierung geliefert.
+    - Technologie-Roadmaps, Governance-Modelle, Lieferzyklen und SLO/SLI-Frameworks definiert, die an Business-KPIs gebunden sind.
+    - Daten-Ingestion- und Verarbeitungspipelines mit Schema-Validierung, Routing und ML-Anreicherung konstruiert.
+    - Discovery, Scoping, Finanzmodellierung und De-Risking-Spikes für neue KI/ML-getriebene Produkte durchgeführt.
+
+- role: "Engineering Manager & designierter Director of QA"
+  time: "2020 - 2022"
+  company: "Homeday GmbH · Berlin"
+  details: |
+    **Cross-funktionale Team-Leadership**
+    - Zwei cross-funktionale Engineering-Teams (je 5–8 Ingenieure) geleitet; Hiring, Performance, Coaching und Team-Health verantwortet.
+    - Mit Produkt-/Design-Leadership zusammengearbeitet, um outcome-fokussierte Roadmaps voranzutreiben und strukturelle Engpässe zu beseitigen.
+    - Engineering-Reife erhöht: CI/CD-Verbesserungen, Observability-Rollout, Teststrategie-Verbesserungen, Incident/On-Call-Playbooks.
+    - Intern bekannt als neutraler, effektiver Konfliktlösungspunkt über Engineering, Produkt und Operations hinweg.
+
+    **Director-Track QA-Organisationsaufbau (0→1)**
+    - Charter, Org-Struktur, Hiring-Plan, Kompetenz-Framework und Betriebskadenz für die neue QA-Abteilung designt.
+    - Erste Senior-QA-Engineers eingestellt und Interview-Loops, Onboarding-Pfade und Qualitäts-KPIs etabliert.
+    - Grundlegende Teststrategie, Governance-Modell und Tooling-Richtung aufgebaut.
+    - Rollout aufgrund eines unternehmensweiten Finanz-Freezes gestoppt, aber grundlegende Prozesse wurden von mehreren Teams übernommen.
+
+- role: "Lead Fullstack Engineer"
+  time: "2018"
+  company: "GetSafe GmbH · Heidelberg"
+  details: |
+    - Service-Grenzen und Deployment-Prozesse modernisiert.
+    - Frühe DevOps-Adoption und Delivery-Stabilisierung vorangetrieben.
+
+- role: "Chief Technology Officer (CTO)"
+  time: "2017 - 2018"
+  company: "Mind Intelligence UG (EXIST Startup) · Berlin"
+  details: |
+    - Vision und Roadmap für eine angewandte KI/ML-Plattform geleitet.
+    - Initiales Team aufgebaut, Produktstrategie gestaltet und F&E-Praktiken etabliert.
+
+- role: "Software Engineer (Ruby on Rails)"
+  time: "2015 - 2017"
+  company: "Distribusion Technologies GmbH · Berlin"
+  details: |
+    - Backend-Features geliefert, Zuverlässigkeit verbessert und Engineering-Normen etabliert (CI, Monitoring, Code-Reviews).
+
+- role: "Software Engineer (Ruby on Rails)"
+  time: "2014 - 2015"
+  company: "Sirena-Bus · Moskau"
+  details: |
+    - Backend-Features geliefert, Zuverlässigkeit verbessert und Engineering-Normen etabliert (CI, Monitoring, Code-Reviews).
+
+- role: "Research Associate / Projektleiter – Embedded- & Navigationssysteme"
+  time: "2012 - 2014"
+  company: "National Research University of Electronic Technology (MIET) · Moskau"
+  details: |
+    - Principal Investigator für ein großes angewandtes F&E-Projekt mit Fokus auf MEMS/Beschleunigungssensor-basierter Sensorik und eingebetteten Navigationssystemen.
+    - Cross-disziplinäres Team von Ingenieuren und Wissenschaftlern durch Prototyping, Testing, Performance-Validierung und Integration geleitet.
+    - Primäre Schnittstelle zu externen Fördereinrichtungen; verantwortlich für Reporting, Milestone-Alignment und Deliverable-Abnahme.
+    - Technischen Scope, Risiko und finanzielle Abstimmung mit internen Accounting/Compliance-Einheiten überwacht.
+    - Validierte Prototypen, Zuverlässigkeitsanalysen und formale Dokumentation unter strengen Performance-Kriterien geliefert.

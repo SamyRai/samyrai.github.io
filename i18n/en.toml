@@ -1,0 +1,77 @@
+[career_profile]
+other = "Career Profile"
+
+[experience]
+other = "Experience"
+
+[education]
+other = "Education"
+
+[projects]
+other = "Projects"
+
+[skills]
+other = "Skills"
+
+[skip_to_main]
+other = "Skip to main content"
+
+[home]
+other = "Home"
+
+[related_posts]
+other = "Related Posts"
+
+[table_of_contents]
+other = "Table of Contents"
+
+[read_more]
+other = "Read more"
+
+[reading_time]
+other = "{{ .ReadingTime }} min read"
+
+[items]
+other = "items"
+
+[download_cv]
+other = "Download CV"
+
+[tags]
+other = "Tags"
+
+[categories]
+other = "Categories"
+
+[author]
+other = "Author"
+
+[share]
+other = "Share"
+
+[sources]
+other = "Sources"
+
+[bibliography]
+other = "References"
+
+[versions]
+other = "Versions"
+
+[blog]
+other = "Blog"
+
+[cv]
+other = "CV"
+
+[view_cv]
+other = "View CV"
+
+[view_blog]
+other = "View Blog"
+
+[change_language]
+other = "Change Language"
+
+[change_theme]
+other = "Change Theme"

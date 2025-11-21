@@ -1,175 +1,142 @@
-// Modern JavaScript for the resume site
-document.addEventListener('DOMContentLoaded', function() {
+/**
+ * Main Application Entry Point
+ * Initializes all modules and handles global events
+ */
+
+class ResumeApp {
+  constructor() {
+    this.modules = {};
+    this.init();
+  }
+
+  init() {
+    // Wait for DOM to be ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => this.initModules());
+    } else {
+      this.initModules();
+    }
+
+    // Handle page load
+    window.addEventListener("load", () => this.onPageLoad());
+  }
+
+  initModules() {
+    // Initialize sidebar
+    this.modules.sidebar = new window.Sidebar();
+
+    // Initialize floating controls
+    this.modules.floatingControls = new window.FloatingControls();
+
     // Initialize animations
-    initAnimations();
-    
+    this.modules.animations = new window.Animations({
+      selector: "section",
+      threshold: 0.1,
+      animationClass: "animate-fade-in",
+    });
+
     // Initialize smooth scrolling
-    initSmoothScrolling();
-    
-    // Initialize theme switching (if needed)
-    initThemeSwitching();
-});
+    this.modules.smoothScroll = new window.SmoothScroll({
+      selector: 'a[href^="#"]',
+      behavior: "smooth",
+      offset: 20,
+    });
 
-// Animation initialization
-function initAnimations() {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in');
-                observer.unobserve(entry.target);
-            }
+    // Initialize filtering for posts
+    if (window.FilterPosts && document.querySelector(".posts-list")) {
+      try {
+        this.modules.filterPosts = new window.FilterPosts({
+          container: ".posts-list",
+          selector: ".post-item",
         });
-    }, observerOptions);
-    
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-    });
-}
+      } catch (e) {
+        console.warn("FilterPosts initialization failed:", e);
+      }
+    }
 
-// Smooth scrolling for anchor links
-function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+    // Initialize reading progress for single posts
+    if (window.ReadingProgress && document.querySelector(".post-content")) {
+      try {
+        this.modules.readingProgress = new window.ReadingProgress({
+          contentSelector: ".post-content",
+          showTimeRemaining: true,
         });
-    });
-}
-
-// Theme switching functionality
-function initThemeSwitching() {
-    const themeColors = ['blue', 'turquoise', 'green', 'berry', 'orange', 'ceramic'];
-    let currentThemeIndex = 0;
-    
-    // Create theme switcher if needed
-    const themeSwitcher = document.createElement('button');
-    themeSwitcher.className = 'theme-switcher';
-    themeSwitcher.innerHTML = `
-        <div class="theme-switcher-content">
-            <svg class="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-            </svg>
-            <span class="theme-label">Theme</span>
-            <span class="theme-indicator">${themeColors[currentThemeIndex]}</span>
-        </div>
-    `;
-    themeSwitcher.setAttribute('aria-label', 'Switch theme');
-    
-    themeSwitcher.addEventListener('click', () => {
-        currentThemeIndex = (currentThemeIndex + 1) % themeColors.length;
-        const newTheme = themeColors[currentThemeIndex];
-        applyTheme(newTheme);
-        
-        // Update the indicator
-        const indicator = themeSwitcher.querySelector('.theme-indicator');
-        if (indicator) {
-            indicator.textContent = newTheme;
-            // Add a subtle color transition
-            indicator.style.opacity = '0.7';
-            setTimeout(() => {
-                indicator.style.opacity = '1';
-            }, 200);
-        }
-        
-        // Add a subtle animation
-        themeSwitcher.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            themeSwitcher.style.transform = 'scale(1)';
-        }, 150);
-    });
-    
-    // Add theme switcher to page
-    document.body.appendChild(themeSwitcher);
-}
-
-// Apply theme colors
-function applyTheme(theme) {
-    const root = document.documentElement;
-    const colorMap = {
-        blue: {
-            primary: '#2563eb',
-            primaryDark: '#1d4ed8',
-            primaryLight: '#dbeafe'
-        },
-        turquoise: {
-            primary: '#14b8a6',
-            primaryDark: '#0f766e',
-            primaryLight: '#ccfbf1'
-        },
-        green: {
-            primary: '#22c55e',
-            primaryDark: '#15803d',
-            primaryLight: '#dcfce7'
-        },
-        berry: {
-            primary: '#ec4899',
-            primaryDark: '#be185d',
-            primaryLight: '#fce7f3'
-        },
-        orange: {
-            primary: '#f97316',
-            primaryDark: '#c2410c',
-            primaryLight: '#ffedd5'
-        },
-        ceramic: {
-            primary: '#78716c',
-            primaryDark: '#44403c',
-            primaryLight: '#f5f5f4'
-        }
-    };
-    
-    const colors = colorMap[theme];
-    if (colors) {
-        root.style.setProperty('--color-primary', colors.primary);
-        root.style.setProperty('--color-primary-dark', colors.primaryDark);
-        root.style.setProperty('--color-primary-light', colors.primaryLight);
+      } catch (e) {
+        console.warn("ReadingProgress initialization failed:", e);
+      }
     }
-}
 
-// Utility functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Handle window resize
-window.addEventListener('resize', debounce(() => {
-    // Handle responsive behavior
-    const sidebar = document.getElementById('sidebar');
-    if (window.innerWidth >= 1024 && sidebar) {
-        sidebar.classList.remove('-translate-x-full');
+    // Initialize table of contents for single posts
+    if (window.TableOfContents && document.querySelector(".post-content")) {
+      try {
+        const headings = document.querySelectorAll(
+          ".post-content h2, .post-content h3, .post-content h4"
+        );
+        if (headings.length >= 3) {
+          this.modules.tableOfContents = new window.TableOfContents({
+            contentSelector: ".post-content",
+            headingSelector: "h2, h3, h4",
+          });
+        }
+      } catch (e) {
+        console.warn("TableOfContents initialization failed:", e);
+      }
     }
-}, 250));
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
+    // Expose modules globally for debugging/external access
+    window.ResumeSite = {
+      modules: this.modules,
+      version: "2.2.0",
+      features: {
+        sidebar: true,
+        floatingControls: true,
+        animations: true,
+        smoothScroll: true,
+        filterPosts: !!this.modules.filterPosts,
+        readingProgress: !!this.modules.readingProgress,
+        tableOfContents: !!this.modules.tableOfContents,
+      },
+    };
 
-// Export functions for potential use in templates
-window.ResumeSite = {
-    initAnimations,
-    initSmoothScrolling,
-    initThemeSwitching,
-    applyTheme
-};
+    console.log("ResumeSite initialized:", window.ResumeSite.features);
+  }
+
+  onPageLoad() {
+    // Add loaded class for CSS animations
+    document.body.classList.add("loaded");
+
+    // Lazy load images
+    this.initLazyLoading();
+  }
+
+  initLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute("data-src");
+            }
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      images.forEach((img) => imageObserver.observe(img));
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      images.forEach((img) => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+        }
+      });
+    }
+  }
+}
+
+// Initialize the application
+new ResumeApp();

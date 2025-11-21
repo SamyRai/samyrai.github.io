@@ -1,0 +1,161 @@
+/* ============================================
+   Modern Resume Theme (2025)
+   Refactored for DRY, Maintainability & Modern CSS
+   ============================================ */
+
+/* Import Design Tokens (CSS Custom Properties) */
+@import "tokens";
+
+/* Import SCSS Mixins */
+@import "mixins";
+
+/* Import Base Styles (Reset, HTML elements) */
+@import "base";
+
+/* Import Link Utilities */
+@import "links";
+
+/* Import Prose / Rich Text Styles */
+@import "prose";
+
+/* Import Components */
+@import "components";
+
+/* Import Blog Components */
+@import "blog";
+
+/* Import Sidebar */
+@import "sidebar";
+
+/* Import Floating Controls */
+@import "floating-controls";
+
+/* Import CV Styles */
+@import "cv";
+
+/* Import Essential Utilities */
+@import "utilities";
+
+/* ===== Print Styles (Optimized for CV) ===== */
+@media print {
+  /* Hide non-printable elements */
+  .sidebar,
+  .sidebar-overlay,
+  .sidebar-toggle,
+  .btn-download,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset main content layout for print */
+  #main-content {
+    margin-inline-start: 0 !important;
+    padding-block-start: 0 !important;
+    z-index: 1 !important;
+  }
+
+  /* Optimize spacing for print */
+  body {
+    background-color: var(--color-white);
+  }
+
+  main {
+    padding-block: var(--space-2);
+  }
+
+  header {
+    padding-block: var(--space-3);
+  }
+
+  section {
+    margin-block-end: var(--space-2);
+    break-inside: avoid;
+  }
+
+  .card {
+    margin-block-end: var(--space-2);
+    padding: var(--space-3);
+    box-shadow: none;
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .experience-item,
+  .education-item,
+  .project-card {
+    break-inside: avoid;
+    margin-block-end: var(--space-2);
+    padding: var(--space-3);
+  }
+
+  /* Typography adjustments for print */
+  h1 {
+    font-size: 2.25rem;
+    margin-block-end: var(--space-1);
+  }
+
+  h2 {
+    margin-block-end: var(--space-2);
+    padding-block-end: var(--space-1);
+    font-size: 1.25rem;
+    border-block-end-width: 2px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-block-end: var(--space-1);
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    margin-block: var(--space-2) var(--space-1);
+  }
+
+  p {
+    margin-block-end: var(--space-1);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  ul {
+    margin-block-end: var(--space-1);
+  }
+
+  li {
+    margin-block-end: 0.1rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* Reduce spacing between stacked elements */
+  .space-y-2 > * + * {
+    margin-block-start: var(--space-1);
+  }
+
+  .space-y-4 > * + * {
+    margin-block-start: var(--space-2);
+  }
+
+  .space-y-8 > * + * {
+    margin-block-start: var(--space-3);
+  }
+
+  /* Optimize grid layouts for print */
+  .grid {
+    gap: var(--space-2);
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1.2cm;
+    size: A4;
+  }
+
+  /* Force page breaks where needed */
+  .page-break {
+    break-before: page;
+  }
+
+  .avoid-break {
+    break-inside: avoid;
+  }
+}

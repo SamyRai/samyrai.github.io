@@ -1,0 +1,46 @@
+{{/*
+Partial: display post sources and cross-post versions
+
+front matter: sources: [sourceID, ...]
+front matter: versions: [{platform, url, posted_at, external_id, note}, ...]
+*/}}
+
+{{ if or (.Params.sources) (.Params.versions) }}
+<aside class="post-sources">
+    {{ if .Params.sources }}
+    <div class="sources-section">
+        {{ $site := $.Site }}
+        <h3>{{ i18n "sources" | default "Sources" }}</h3>
+        <ul class="sources-list">
+        {{ range .Params.sources }}
+            {{ $s := index $site.Data.sources . }}
+            {{ if $s }}
+            <li>
+                <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
+                {{ with $s.type }}<span class="source-type"> — {{ . }}</span>{{ end }}
+            </li>
+            {{ else }}
+            <li>{{ . }}</li>
+            {{ end }}
+        {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    {{ if .Params.versions }}
+    <div class="versions-section">
+        <h3>{{ i18n "versions" | default "Versions" }}</h3>
+        <ul>
+        {{ range .Params.versions }}
+            <li>
+                {{- with .platform }}<strong>{{ . }}</strong>{{ end }}
+                {{- with .url }} — <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Link</a>{{ end }}
+                {{- with .posted_at }} <span class="posted-date">(posted {{ . }})</span>{{ end }}
+                {{- with .note }}<div class="version-note">{{ . }}</div>{{ end }}
+            </li>
+        {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</aside>
+{{ end }}

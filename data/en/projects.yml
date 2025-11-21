@@ -1,0 +1,26 @@
+title: "Selected Projects"
+intro: ""
+assignments:
+  - title: "Secure On-Prem AI/Automation Platform (2023–2024)"
+    link: "#"
+    tagline: "Designed and delivered a private, air-gapped automation platform on Talos/NixOS clusters with GPU acceleration. Implemented document extraction, classification, routing, and event-driven workflows for regulated clients."
+
+  - title: "Private Data & Event Pipeline Architecture (2022–2024)"
+    link: "#"
+    tagline: "Created structured ingestion and processing pipelines with schema validation, routing, and ML-based enrichment. Formed the backbone for multiple automation and analytics workflows."
+
+  - title: "0→1 QA & Engineering Excellence Framework (2021–2022)"
+    link: "#"
+    tagline: "Defined a unified quality and delivery framework for two engineering teams. Established test strategy, quality metrics, and processes intended for a new QA department."
+
+  - title: "Smart Building Automation (Hotel & Office Installations)"
+    link: "#"
+    tagline: "Installed and configured smart-building systems (lighting, HVAC, sensors, controllers). Managed commissioning, device provisioning, multi-vendor integration, and troubleshooting in live environments."
+
+  - title: "Wearable Device Prototyping"
+    link: "#"
+    tagline: "Contributed to developing a wearable device through embedded prototyping, sensor evaluation, BLE communication testing, and usability assessment under tight hardware constraints."
+
+  - title: "Embedded Navigation & Sensing R&D (2012–2014)"
+    link: "#"
+    tagline: "Delivered multi-year applied research on MEMS/accelerometer-based sensing and embedded navigation systems, including prototyping, testing, performance characterization, and external reporting."

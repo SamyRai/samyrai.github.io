@@ -1,6 +1,45 @@
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+hugo_stats.json
+
+# Node
+node_modules/
+package-lock.json
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Ruby (legacy)
 _site
-node_modules
 Gemfile.lock
 .sass-cache
 *.gem
-backup/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.log
+npm-debug.log*
+
+# Legacy CMS
+.forestry/
+
+# Temporary files
+*.tmp
+*.bak
+*.old
