@@ -19,18 +19,27 @@ body.sidebar-open .sidebar {
   transform: translateX(0);
 }
 
+/* Desktop: sidebar always visible */
 @include lg {
-  body:not(.sidebar-open) {
-    .sidebar {
-      transform: translateX(var(--translate-full));
-    }
-
-    #main-content {
-      margin-left: 0 !important;
-      transform: none !important;
-    }
+  .sidebar {
+    transform: translateX(0);
   }
 
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .sidebar-overlay {
+    display: none;
+  }
+
+  .sidebar-close {
+    display: none;
+  }
+}
+
+/* Mobile: sidebar hidden by default, toggle shows it */
+@include mobile {
   .sidebar-toggle {
     display: block;
   }
@@ -69,10 +78,6 @@ body.sidebar-open .sidebar {
     block-size: var(--space-6);
     pointer-events: none;
   }
-
-  @include lg {
-    display: none;
-  }
 }
 
 .sidebar-overlay {
@@ -85,10 +90,6 @@ body.sidebar-open .sidebar {
   visibility: hidden;
   transition: opacity var(--transition-slow), visibility var(--transition-slow);
   pointer-events: none;
-
-  @include lg {
-    display: none;
-  }
 }
 
 body.sidebar-open .sidebar-overlay {
