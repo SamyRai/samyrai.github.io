@@ -27,7 +27,9 @@
                 {{ with .Params.author }}
                 <div class="flex items-center gap-2">
                     {{ $authorName := . }}
-                    {{ if reflect.IsSlice . }}
+                    {{ if reflect.IsMap . }}
+                        {{ $authorName = .name }}
+                    {{ else if reflect.IsSlice . }}
                         {{ $authorName = index . 0 }}
                     {{ end }}
                     <div class="author-avatar w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
