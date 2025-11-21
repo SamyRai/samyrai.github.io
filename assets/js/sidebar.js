@@ -162,8 +162,13 @@ window.Sidebar = class {
   closeSidebar() {
     console.log("Closing sidebar");
 
-    // Close sidebar for both mobile and desktop (desktop may collapse into an
-    // overlay-less state). Keep accessibility attributes in sync.
+    // On desktop (≥1024px), sidebar should remain visible - don't close
+    if (window.innerWidth >= this.breakpoint) {
+      console.log("Desktop mode - sidebar cannot be closed");
+      return;
+    }
+
+    // Close sidebar for mobile only
     document.body.classList.remove("sidebar-open");
     if (this.toggle) this.toggle.setAttribute("aria-expanded", "false");
     if (this.sidebar) this.sidebar.setAttribute("aria-hidden", "true");

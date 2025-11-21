@@ -19,10 +19,10 @@ body.sidebar-open .sidebar {
   transform: translateX(0);
 }
 
-/* Desktop: sidebar always visible */
+/* Desktop: sidebar always visible, not closeable */
 @include lg {
   .sidebar {
-    transform: translateX(0);
+    transform: translateX(0) !important; // Force visible on desktop
   }
 
   .sidebar-toggle {
