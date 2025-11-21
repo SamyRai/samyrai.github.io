@@ -17,8 +17,8 @@
     {{ partial "performance-hints.html" . }}
 
     <!-- Open Graph (Facebook) & Twitter Cards - Hugo Built-in Templates -->
-    {{ partial "opengraph.html" . }}
-    {{ partial "twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
 
     <!-- RSS Feed -->
     {{ with .OutputFormats.Get "rss" }}
