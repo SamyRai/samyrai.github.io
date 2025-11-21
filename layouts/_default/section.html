@@ -1,0 +1,95 @@
+{{ define "main" }}
+    {{ if not (in .RelPermalink "posts/") }}
+
+    <div class="container mx-auto px-6 py-8">
+        <!-- Career Profile -->
+        <section class="mb-12 animate-fade-in">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ i18n "career_profile" }}</h2>
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-gray-700 leading-relaxed">
+                        {{ (index .Site.Data .Site.Language.Lang).career.text | markdownify }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="mb-12 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ i18n "experience" }}</h2>
+                <div class="space-y-8">
+                    {{ range (index .Site.Data .Site.Language.Lang).experiences }}
+                        <div class="timeline-item">
+                            <div class="mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">{{ .role }}</h3>
+                                <div class="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+                                    <span class="font-medium">{{ .company }}</span>
+                                    <span>•</span>
+                                    <span>{{ .time }}</span>
+                                </div>
+                            </div>
+                            <div class="prose prose-sm max-w-none text-gray-700">
+                                {{ .details | markdownify }}
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-12 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ i18n "education" }}</h2>
+                <div class="space-y-6">
+                    {{ range (index .Site.Data .Site.Language.Lang).education }}
+                        <div class="border-l-4 border-primary pl-6">
+                            <h3 class="text-lg font-semibold text-gray-900">{{ .degree }}</h3>
+                            <div class="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-2">
+                                <span class="font-medium">{{ .university }}</span>
+                                <span>•</span>
+                                <span>{{ .time }}</span>
+                            </div>
+                            {{ if .details }}
+                            <p class="text-sm text-gray-700">{{ .details }}</p>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="mb-12 animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ i18n "projects" }}</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {{ range (index .Site.Data .Site.Language.Lang).projects.assignments }}
+                    <div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ .title }}</h3>
+                        <p class="text-sm text-gray-700">{{ .tagline }}</p>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-12 animate-fade-in" style="animation-delay: 0.4s;">
+            <div class="card">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ i18n "skills" }}</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {{ range (index .Site.Data .Site.Language.Lang).skills.toolset }}
+                    <div class="bg-gray-50 rounded-lg px-4 py-3">
+                        <span class="text-sm font-medium text-gray-900">{{ .name }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+    </div>
+    {{ else }}
+        {{ partial "posts-list.html" . }}
+    {{ end }}
+{{ end }}

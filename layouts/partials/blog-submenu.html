@@ -1,0 +1,78 @@
+<aside class="blog-submenu">
+    <div class="submenu-header">
+        <h3 class="submenu-title">
+            <svg class="icon-lg text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+            </svg>
+            {{ i18n "blog" | default "Blog" }}
+        </h3>
+        <a href="{{ relLangURL "/posts/" }}"
+           class="submenu-link">
+            View all posts
+            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="submenu-grid">
+        <div class="filter-section">
+            <h4>
+                <svg class="icon-sm text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                {{ i18n "categories" | default "Categories" }}
+            </h4>
+            <div class="filter-list">
+                {{ $cats := slice }}
+                {{ range $term, $pages := .Site.Taxonomies.categories }}
+                    {{ $cats = $cats | append (dict "term" $term "count" (len $pages)) }}
+                {{ end }}
+                {{ range sort $cats "count" "desc" }}
+                {{ $isActive := false }}
+                {{ if eq $.Title .term }}{{ $isActive = true }}{{ end }}
+                {{ $currentCats := $.Params.categories | default (slice) }}
+                {{ if in (printf "%s" (delimit $currentCats ",")) (printf "%s" .term) }}{{ $isActive = true }}{{ end }}
+                <a href="/categories/{{ .term | urlize }}/"
+                   data-filter-category="{{ .term }}"
+                   class="tag-pill gray {{ if $isActive }}active{{ end }}"
+                   title="{{ .count }} posts">
+                    {{ .term }} <span class="count">({{ .count }})</span>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h4>
+                <svg class="icon-sm text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/>
+                </svg>
+                {{ i18n "tags" | default "Tags" }}
+            </h4>
+            <div class="filter-list">
+                {{ $tags := slice }}
+                {{ range $term, $pages := .Site.Taxonomies.tags }}
+                    {{ $tags = $tags | append (dict "term" $term "count" (len $pages)) }}
+                {{ end }}
+                {{ range first 10 (sort $tags "count" "desc") }}
+                {{ $isActiveT := false }}
+                {{ if eq $.Title .term }}{{ $isActiveT = true }}{{ end }}
+                {{ $currentTags := $.Params.tags | default (slice) }}
+                {{ if in (printf "%s" (delimit $currentTags ",")) (printf "%s" .term) }}{{ $isActiveT = true }}{{ end }}
+                <a href="/tags/{{ .term | urlize }}/"
+                   data-filter-tag="{{ .term }}"
+                   class="tag-pill primary {{ if $isActiveT }}active{{ end }}"
+                   title="{{ .count }} posts">
+                    #{{ .term }} <span class="count">({{ .count }})</span>
+                </a>
+                {{ end }}
+                {{ if gt (len $tags) 10 }}
+                <a href="{{ relLangURL "/tags/" }}" class="submenu-link">
+                    +{{ sub (len $tags) 10 }} more tags →
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</aside>

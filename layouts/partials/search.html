@@ -1,0 +1,125 @@
+{{- /*
+  Search component for blog posts
+  Uses JSON API for client-side search
+*/ -}}
+
+{{ if eq .Section "posts" }}
+<div class="search-container">
+  <div class="search-input-wrapper">
+    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
+    <input
+      type="search"
+      id="search-input"
+      class="search-input"
+      placeholder="{{ i18n "search_posts" | default "Search posts..." }}"
+      autocomplete="off"
+      aria-label="{{ i18n "search_posts" | default "Search posts" }}"
+    >
+  </div>
+  <div id="search-results" class="search-results" role="listbox"></div>
+</div>
+
+<style>
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-gray-400);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--rounded-lg);
+  font-size: 1rem;
+  transition: all var(--transition-base);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-lg);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 50;
+  display: none;
+}
+
+.search-results.active {
+  display: block;
+}
+
+.search-result-item {
+  display: block;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-gray-100);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color var(--transition-base);
+}
+
+.search-result-item:hover {
+  background-color: var(--color-gray-50);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-gray-900);
+}
+
+.search-result-summary {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  margin-bottom: 0.25rem;
+}
+
+.search-result-meta {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.search-result-item mark {
+  background-color: rgba(var(--color-primary-rgb), 0.2);
+  color: var(--color-primary-dark);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.search-no-results {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-gray-500);
+}
+</style>
+{{ end }}

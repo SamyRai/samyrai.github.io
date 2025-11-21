@@ -1,0 +1,75 @@
+{{- /*
+  Breadcrumb navigation for SEO and UX
+  Implements Schema.org BreadcrumbList
+*/ -}}
+
+<nav aria-label="breadcrumb" class="breadcrumb-container">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ .Site.BaseURL | relLangURL }}">
+        <span itemprop="name">{{ i18n "home" }}</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+
+    {{ $position := 2 }}
+    {{ range .Ancestors.Reverse }}
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ .RelPermalink }}">
+          <span itemprop="name">{{ .Title }}</span>
+        </a>
+        <meta itemprop="position" content="{{ $position }}" />
+      </li>
+      {{ $position = add $position 1 }}
+    {{ end }}
+
+    <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">{{ .Title }}</span>
+      <meta itemprop="position" content="{{ $position }}" />
+    </li>
+  </ol>
+</nav>
+
+<style>
+.breadcrumb-container {
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  padding: 0 0.5rem;
+  color: #d1d5db;
+}
+
+.breadcrumb-item a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--primary-color, #3b82f6);
+}
+
+.breadcrumb-item.active {
+  color: #111827;
+  font-weight: 500;
+}
+</style>

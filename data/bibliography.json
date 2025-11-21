@@ -1,0 +1,591 @@
+[
+  {
+    "id": "volkow2005",
+    "type": "journal",
+    "authors": [
+      "Volkow, N. D.",
+      "Fowler, J. S.",
+      "Wang, G. J."
+    ],
+    "year": 2009,
+    "title": "Evaluating dopamine reward pathway in ADHD: Clinical implications",
+    "journal": "JAMA",
+    "volume": "302",
+    "issue": "10",
+    "pages": "1084-1091",
+    "doi": "10.1001/jama.2009.1308",
+    "url": "https://doi.org/10.1001/jama.2009.1308",
+    "used_in": [
+      "why-after-some-time-adhd-medication-stops-working.md"
+    ]
+  },
+  {
+    "id": "bymaster2002",
+    "type": "journal",
+    "authors": [
+      "Bymaster, F. P.",
+      "Katner, J.",
+      "Nelson, D. L.",
+      "Hemrick-Luecke, S. K.",
+      "et al."
+    ],
+    "year": 2002,
+    "title": "Atomoxetine increases extracellular levels of norepinephrine and dopamine in prefrontal cortex of rat: A potential mechanism for efficacy in Attention Deficit/Hyperactivity Disorder",
+    "journal": "Neuropsychopharmacology",
+    "volume": "27",
+    "issue": "5",
+    "pages": "699-711",
+    "doi": "10.1016/S0893-133X(02)00346-9",
+    "url": "https://doi.org/10.1016/S0893-133X(02)00346-9",
+    "used_in": [
+      "why-after-some-time-adhd-medication-stops-working.md"
+    ]
+  },
+  {
+    "id": "arnsten2009",
+    "type": "journal",
+    "authors": [
+      "Arnsten, A. F. T."
+    ],
+    "year": 2009,
+    "title": "The emerging neurobiology of ADHD: The key role of the prefrontal association cortex",
+    "journal": "Journal of Pediatrics",
+    "volume": "154",
+    "issue": "5",
+    "pages": "I-S43",
+    "doi": "10.1016/j.jpeds.2009.01.018",
+    "url": "https://doi.org/10.1016/j.jpeds.2009.01.018",
+    "used_in": [
+      "why-after-some-time-adhd-medication-stops-working.md"
+    ]
+  },
+  {
+    "id": "wurtman1988",
+    "type": "journal",
+    "authors": [
+      "Wurtman, R. J."
+    ],
+    "year": 1986,
+    "title": "Ways that foods can affect the brain",
+    "journal": "Nutrition Reviews",
+    "volume": "44",
+    "issue": "Suppl",
+    "pages": "2-6",
+    "doi": "10.1111/j.1753-4887.1986.tb07671.x",
+    "url": "https://doi.org/10.1111/j.1753-4887.1986.tb07671.x",
+    "used_in": [
+      "why-after-some-time-adhd-medication-stops-working.md"
+    ]
+  },
+  {
+    "id": "meeusen1995",
+    "type": "journal",
+    "authors": [
+      "Meeusen, R.",
+      "De Meirleir, K."
+    ],
+    "year": 1995,
+    "title": "Exercise and brain neurotransmission",
+    "journal": "Sports Medicine",
+    "volume": "20",
+    "issue": "3",
+    "pages": "160-188",
+    "doi": "10.2165/00007256-199520030-00004",
+    "url": "https://doi.org/10.2165/00007256-199520030-00004",
+    "used_in": [
+      "why-after-some-time-adhd-medication-stops-working.md"
+    ],
+    "publisher": "Springer Science and Business Media LLC"
+  },
+  {
+    "id": "healthcentral2024",
+    "type": "web",
+    "authors": [
+      "Bailey, E."
+    ],
+    "year": 2024,
+    "title": "ADHD: Why Traditional Punishment Doesn't Work",
+    "publisher": "HealthCentral",
+    "url": "https://www.healthcentral.com/article/adhd-why-traditional-punishment-doesnt-work",
+    "used_in": [
+      "understanding-and-supporting-children-with-adhd-and-add.md"
+    ]
+  },
+  {
+    "id": "breaz2024",
+    "type": "report",
+    "authors": [
+      "Breaz, M."
+    ],
+    "year": 2024,
+    "title": "Promoting Positive Behaviour in Children with ADHD",
+    "publisher": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/Maria-Breaz/publication/380977402_Breaz_Vulnerabilities_in_social_assistance_vol_4_-_PUC_B5_e-book_Buntipar_final_1/links/6658284f479366623a20b47d/Breaz-Vulnerabilities-in-social-assistance-vol-4-PUC-B5-e-book-Buntipar-final-1.pdf#page=110",
+    "used_in": [
+      "understanding-and-supporting-children-with-adhd-and-add.md"
+    ]
+  },
+  {
+    "id": "senmagazine2024",
+    "type": "web",
+    "authors": [],
+    "year": 2024,
+    "title": "Why punishments don't work for children with ADHD",
+    "publisher": "SEN Magazine",
+    "url": "https://senmagazine.co.uk/adhd/12842/why-punishments-dont-work-for-children-with-adhd/",
+    "used_in": [
+      "understanding-and-supporting-children-with-adhd-and-add.md"
+    ]
+  },
+  {
+    "id": "sciencedaily2017",
+    "type": "web",
+    "authors": [],
+    "year": 2017,
+    "title": "Keeping harsh punishment in check helps kids with ADHD, study finds",
+    "publisher": "ScienceDaily",
+    "url": "https://www.sciencedaily.com/releases/2017/11/171107113052.htm",
+    "used_in": [
+      "understanding-and-supporting-children-with-adhd-and-add.md"
+    ]
+  },
+  {
+    "id": "ibcces2024",
+    "type": "web",
+    "authors": [],
+    "year": 2024,
+    "title": "Carrots vs. Sticks: The Science of Reward and Punishment for Children with ADHD",
+    "publisher": "IBCCES",
+    "url": "https://ibcces.org/learning/carrots-vs-sticks-the-science-of-reward-and-punishment-for-children-with-adhd/",
+    "used_in": [
+      "understanding-and-supporting-children-with-adhd-and-add.md"
+    ]
+  },
+  {
+    "id": "beck-cbt",
+    "type": "book",
+    "title": "Cognitive Behavior Therapy: Basics and Beyond",
+    "authors": [
+      "Judith S. Beck"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "understanding-and-tackling-cognitive-distortions---a-practical-guide-part-1.md"
+    ]
+  },
+  {
+    "id": "burns-feeling-good",
+    "type": "book",
+    "title": "Feeling Good",
+    "authors": [
+      "David D. Burns"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "understanding-and-tackling-cognitive-distortions---a-practical-guide-part-1.md"
+    ]
+  },
+  {
+    "id": "greenberger-mind-over-mood",
+    "type": "book",
+    "title": "Mind Over Mood",
+    "authors": [
+      "Dennis Greenberger",
+      "Christine Padesky"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "understanding-and-tackling-cognitive-distortions---a-practical-guide-part-1.md"
+    ]
+  },
+  {
+    "id": "edelman-change-thinking",
+    "type": "book",
+    "title": "Change Your Thinking",
+    "authors": [
+      "Sarah Edelman"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "understanding-and-tackling-cognitive-distortions---a-practical-guide-part-1.md"
+    ]
+  },
+  {
+    "id": "mann-boredom",
+    "type": "book",
+    "title": "The Upside of Downtime: Why Boredom is Good",
+    "authors": [
+      "Dr. Sandi Mann"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "are-you-still-afraid-of-boredom-it-might-help-you.md",
+      "the-complex-relationship-between-childhood-trauma-and-adhd.md"
+    ]
+  },
+  {
+    "id": "danckert-boredom",
+    "type": "book",
+    "title": "Out of My Skull: The Psychology of Boredom",
+    "authors": [
+      "James Danckert",
+      "John D. Eastwood"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "are-you-still-afraid-of-boredom-it-might-help-you.md"
+    ]
+  },
+  {
+    "id": "deal-boredom-cure",
+    "type": "book",
+    "title": "The Boredom Cure: Understanding and Dealing with Boredom",
+    "authors": [
+      "Linda Deal"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "are-you-still-afraid-of-boredom-it-might-help-you.md"
+    ]
+  },
+  {
+    "id": "shaw2014",
+    "type": "journal",
+    "authors": [
+      "Shaw, P.",
+      "Stringaris, A.",
+      "Nigg, J.",
+      "Leibenluft, E."
+    ],
+    "year": 2014,
+    "title": "Emotion Dysregulation in Attention Deficit Hyperactivity Disorder",
+    "journal": "American Journal of Psychiatry",
+    "volume": "171",
+    "issue": "3",
+    "pages": "276-293",
+    "doi": "10.1176/appi.ajp.2013.13070966",
+    "url": "https://doi.org/10.1176/appi.ajp.2013.13070966",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "barkley2015",
+    "type": "book",
+    "authors": [
+      "Barkley, R. A."
+    ],
+    "year": 2015,
+    "title": "Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment",
+    "publisher": "Guilford Press",
+    "edition": "4th",
+    "url": "",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "foa2006",
+    "type": "journal",
+    "authors": [
+      "Foa, E. B.",
+      "Kozak, M. J."
+    ],
+    "year": 1986,
+    "title": "Emotional Processing of Fear: Exposure to Corrective Information",
+    "journal": "Psychological Bulletin",
+    "volume": "99",
+    "issue": "1",
+    "pages": "20-35",
+    "doi": "10.1037/0033-2909.99.1.20",
+    "url": "https://doi.org/10.1037/0033-2909.99.1.20",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "beck2011",
+    "type": "book",
+    "authors": [
+      "Beck, J. S."
+    ],
+    "year": 2011,
+    "title": "Cognitive Behavior Therapy: Basics and Beyond",
+    "publisher": "Guilford Press",
+    "edition": "2nd",
+    "url": "",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "schneider2022",
+    "type": "journal",
+    "authors": [
+      "Schneider, J. R.",
+      "et al."
+    ],
+    "year": 2022,
+    "title": "The neural signature of shame: Meta-analysis of neuroimaging studies of self-conscious emotion",
+    "journal": "Human Brain Mapping",
+    "volume": "43",
+    "issue": "14",
+    "pages": "4432-4450",
+    "doi": "10.1002/hbm.25733",
+    "url": "https://doi.org/10.1002/hbm.25733",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "brown2023",
+    "type": "journal",
+    "authors": [
+      "Brown, E. C.",
+      "Ray, P."
+    ],
+    "year": 2023,
+    "title": "Shame and self-conscious emotions in complex PTSD: A neurobiological review",
+    "journal": "NeuroImage: Clinical",
+    "volume": "37",
+    "issue": "",
+    "pages": "102598",
+    "doi": "10.1016/j.nicl.2023.102598",
+    "url": "https://doi.org/10.1016/j.nicl.2023.102598",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "lawrence2024",
+    "type": "journal",
+    "authors": [
+      "Lawrence, J.",
+      "Kim, H."
+    ],
+    "year": 2024,
+    "title": "Rejection sensitivity and emotion regulation in ADHD: Clinical implications and treatment",
+    "journal": "Journal of Affective Disorders Reports",
+    "volume": "10",
+    "issue": "",
+    "pages": "100532",
+    "doi": "10.1016/j.jadr.2024.100532",
+    "url": "https://doi.org/10.1016/j.jadr.2024.100532",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "lenzi2025",
+    "type": "journal",
+    "authors": [
+      "Lenzi, F.",
+      "Cortese, S.",
+      "Harris, J."
+    ],
+    "year": 2024,
+    "title": "Emotion Processing Difficulties in ADHD: A Bayesian Meta-analysis of fMRI Studies",
+    "journal": "European Child & Adolescent Psychiatry",
+    "volume": "34",
+    "issue": "3",
+    "pages": "455-468",
+    "doi": "10.1007/s00787-024-02483-5",
+    "url": "https://doi.org/10.1007/s00787-024-02483-5",
+    "used_in": [
+      "the-weight-of-guilt.md"
+    ]
+  },
+  {
+    "id": "riggenbach-cbt-toolbox",
+    "type": "book",
+    "title": "The CBT Toolbox: A Workbook for Clients and Clinicians",
+    "authors": [
+      "Jeff Riggenbach"
+    ],
+    "url": "",
+    "year": "",
+    "used_in": [
+      "cognitive-distortions---a-practical-guide-part-2.md"
+    ]
+  },
+  {
+    "id": "chadd2018",
+    "type": "web",
+    "authors": [],
+    "year": 2018,
+    "title": "Understanding the link between ADHD and binge eating could point to new treatments",
+    "publisher": "CHADD",
+    "url": "https://chadd.org/adhd-in-the-news/understanding-the-link-between-adhd-and-binge-eating-could-point-to-new-treatments/",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "javaras2024",
+    "type": "journal",
+    "authors": [
+      "Javaras, K. N.",
+      "et al."
+    ],
+    "year": 2024,
+    "title": "New research revealing the true duration of binge-eating disorder",
+    "journal": "Psychological Medicine",
+    "publisher": "Psychiatric Times",
+    "url": "https://www.psychiatrictimes.com/view/new-research-revealing-the-true-duration-of-binge-eating-disorder",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "myriad2023",
+    "type": "report",
+    "authors": [],
+    "year": 2023,
+    "title": "77% of Americans have used addictive behaviors or unhealthy coping mechanisms to manage their mental health",
+    "publisher": "Myriad Genetics / GeneSight",
+    "url": "https://genesight.com/news-and-press/77-of-americans-have-used-addictive-behaviors-or-unhealthy-coping-mechanisms-to-manage-their-mental-health-according-to-myriad-genetics-nationwide-survey",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "nida2024",
+    "type": "web",
+    "authors": [],
+    "year": 2024,
+    "title": "Cannabis (Marijuana) Research Report: Is marijuana addictive?",
+    "publisher": "National Institute on Drug Abuse (NIDA)",
+    "url": "https://nida.nih.gov/publications/research-reports/marijuana/marijuana-addictive",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "nimh2024",
+    "type": "web",
+    "authors": [],
+    "year": 2024,
+    "title": "Attention-Deficit/Hyperactivity Disorder (ADHD)",
+    "publisher": "National Institute of Mental Health (NIMH)",
+    "url": "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "chadd-main",
+    "type": "web",
+    "authors": [],
+    "year": 2024,
+    "title": "CHADD - The National Resource on ADHD",
+    "publisher": "CHADD",
+    "url": "https://chadd.org",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "samhsa2024",
+    "type": "web",
+    "authors": [],
+    "year": 2024,
+    "title": "Find Help: Recovery",
+    "publisher": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
+    "url": "https://www.samhsa.gov/find-help/recovery",
+    "used_in": [
+      "adhd-and-substance-abuse-are-you-still-self-medicating.md"
+    ]
+  },
+  {
+    "id": "olivardia2020",
+    "type": "web",
+    "authors": [
+      "Olivardia, R."
+    ],
+    "year": 2020,
+    "title": "ADHD and Childhood Trauma: Unraveling The Complex Link",
+    "publisher": "Psychology Today",
+    "url": "https://www.psychologytoday.com/us/blog/the-truth-about-adult-adhd/202001/adhd-and-childhood-trauma-unraveling-the-complex-link",
+    "used_in": [
+      "the-complex-relationship-between-childhood-trauma-and-adhd.md"
+    ]
+  },
+  {
+    "id": "bailey2021",
+    "type": "web",
+    "authors": [
+      "Bailey, E."
+    ],
+    "year": 2021,
+    "title": "When Trauma Manifests as ADHD Symptoms",
+    "publisher": "ADDitude",
+    "url": "https://www.additudemag.com/trauma-manifests-as-adhd-symptoms/",
+    "used_in": [
+      "the-complex-relationship-between-childhood-trauma-and-adhd.md"
+    ]
+  },
+  {
+    "id": "lancet2023",
+    "type": "journal",
+    "authors": [
+      "Cortese, S.",
+      "et al."
+    ],
+    "year": 2023,
+    "title": "Pharmacological management of attention-deficit/hyperactivity disorder in adults: a systematic review and network meta-analysis",
+    "journal": "The Lancet Psychiatry",
+    "volume": "10",
+    "issue": "6",
+    "pages": "428-441",
+    "doi": "10.1016/S2215-0366(23)00100-2",
+    "url": "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(23)00100-2/fulltext",
+    "used_in": [
+      "elvanse-cheat-sheet-science-backed-tips-for-managing-adhd.md"
+    ]
+  },
+  {
+    "id": "attention2020",
+    "type": "journal",
+    "authors": [
+      "Sibley, M. H.",
+      "et al."
+    ],
+    "year": 2020,
+    "title": "Long-term effects of stimulant treatment on ADHD symptoms, social-emotional functioning, and cognition",
+    "journal": "Journal of Attention Disorders",
+    "volume": "24",
+    "issue": "14",
+    "pages": "2067-2080",
+    "doi": "10.1177/1087054719865771",
+    "url": "https://journals.sagepub.com/doi/full/10.1177/1087054719865771",
+    "used_in": [
+      "elvanse-cheat-sheet-science-backed-tips-for-managing-adhd.md"
+    ]
+  },
+  {
+    "id": "nutrition2019",
+    "type": "journal",
+    "authors": [
+      "Rucklidge, J. J.",
+      "et al."
+    ],
+    "year": 2019,
+    "title": "The role of nutrition in ADHD",
+    "journal": "Nutritional Neuroscience",
+    "volume": "22",
+    "issue": "10",
+    "pages": "725-736",
+    "doi": "10.1080/1028415X.2019.1680832",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/1028415X.2019.1680832",
+    "used_in": [
+      "elvanse-cheat-sheet-science-backed-tips-for-managing-adhd.md"
+    ]
+  }
+]

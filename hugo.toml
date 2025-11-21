@@ -1,57 +1,238 @@
-baseURL = 'https://samyrai.github.io/'
+baseURL = 'https://mukimov.com/'
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = false
+title = 'Damir Mukimov - Technology Leader'
+enableRobotsTXT = true
+enableGitInfo = false
+enableEmoji = true
+
+[languages]
+[languages.en]
 languageCode = 'en-us'
 title = 'Damir Mukimov - Technology Leader'
-theme = 'resume-theme'
+weight = 1
+[[languages.en.menu.main]]
+name = "Blog"
+url = "/posts/"
+weight = 10
+
+[languages.de]
+languageCode = 'de'
+title = 'Damir Mukimov - Technologie Leader'
+weight = 2
+[[languages.de.menu.main]]
+name = "Blog"
+url = "/de/posts/"
+weight = 10
 
 [params]
-  description = 'Technology leader with 15+ years in software and 10+ years building and leading engineering orgs'
-  author = 'Damir Mukimov'
-  email = 'mukimov.d@gmail.com'
-  phone = '+49 152 02328598'
-  website = 'mukimov.com'
-  linkedin = 'mukimov'
-  github = 'SamyRai'
-  pdf = '/assets/mukimov_cv.pdf'
-  
-  # Theme settings
-  theme_skin = 'blue' # blue, turquoise, green, berry, orange, ceramic
-  enable_analytics = false
-  analytics_id = ''
+description = 'Technology leader with 15+ years in software and 10+ years building and leading engineering orgs'
+author = 'Damir Mukimov'
+email = 'mukimov.d@gmail.com'
+phone = '+49 152 02328598'
+website = 'mukimov.com'
+linkedin = 'mukimov'
+github = 'SamyRai'
+pdf = '/assets/mukimov_cv.pdf'
+showSourcesInSidebar = true
+showVersionsAdmin = false
+github_repo = "SamyRai/samyrai.github.io"
+branch = "redesign"
+showTaxonomyAdmin = false
+images = ['images/profile.png']                                                                                  # Default image for Open Graph/Twitter Cards
+
+# Theme settings
+theme_skin = 'blue' # blue, turquoise, green, berry, orange, ceramic
+
+# Social media (for meta tags)
+[params.social]
+twitter = '' # Add your Twitter handle if needed (without @)
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-  [markup.highlight]
-    style = 'github'
-    lineNos = false
-    lineNumbersInTable = false
-    noClasses = false
-    noHl = false
-    tabWidth = 4
-    guessSyntax = false
+defaultMarkdownHandler = "goldmark"
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+style = 'github'
+lineNos = false
+lineNumbersInTable = false
+noClasses = false
+noHl = false
+tabWidth = 4
+guessSyntax = false
 
 [build]
-  writeStats = true
+writeStats = true
+noJSConfigInAssets = false
+useResourceCacheWhen = 'fallback'
+
+# Build stats for CSS purging (unused CSS removal)
+[build.buildStats]
+enable = true
+disableClasses = false
+disableIDs = false
+disableTags = false
+
+# Cache busters for asset pipeline
+[[build.cachebusters]]
+source = "assets/watching/hugo_stats\\.json"
+target = "styles\\.css"
+
+[[build.cachebusters]]
+source = "(postcss|tailwind)\\.config\\.js"
+target = "css"
+
+[[build.cachebusters]]
+source = "assets/.*\\.(js|ts|jsx|tsx)"
+target = "js"
+
+[[build.cachebusters]]
+source = "assets/.*\\.(.*)$"
+target = "$1"
+
+[imaging]
+# Enhanced imaging settings
+anchor = 'Smart'           # Case-sensitive: Smart
+bgColor = '#ffffff'
+hint = 'photo'
+quality = 85               # Higher quality for better results
+resampleFilter = 'Lanczos' # Case-sensitive: Better quality resampling
+
+[imaging.exif]
+disableDate = false
+disableLatLong = true # Privacy: don't expose GPS data
 
 [server]
-  port = 1313
-  bind = '0.0.0.0'
+port = 1313
+bind = '0.0.0.0'
+
+# Module system configuration (v0.150.0+)
+[module]
+# Module mounts for organized content structure
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
+
+[[module.mounts]]
+source = "data"
+target = "data"
 
 [security]
-  [security.exec]
-    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^babel$']
-    osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+enableInlineShortcodes = false
+
+[security.exec]
+allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^babel$']
+osEnv = [
+    '(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|PROGRAMDATA)$',
+] # Added PROGRAMDATA for Windows (v0.150.0)
+
+[security.funcs]
+getenv = ['^HUGO_', '^CI$', '^USER$', '^HOME$']
+
+[security.http]
+methods = ['(?i)GET|POST']
+urls = ['.*']
+
+# Cache configuration for improved performance
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "24h"
+
+[caches.getcsv]
+dir = ":cacheDir/:project"
+maxAge = "24h"
+
+[caches.images]
+dir = ":resourceDir/_gen"
+maxAge = -1               # Never expire
+
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = -1
+
+[caches.modules]
+dir = ":cacheDir/modules"
+maxAge = -1
+
+[minify]
+disableCSS = false
+disableHTML = false
+disableJS = false
+disableJSON = false
+disableSVG = false
+disableXML = false
+minifyOutput = true
+
+[minify.tdewolff.html]
+keepWhitespace = false
+keepEndTags = true
+keepDefaultAttrVals = true
+keepDocumentTags = true
+keepQuotes = false
+
+[minify.tdewolff.css]
+precision = 0
+keepCSS2 = false # Target CSS3 for modern browsers (v0.149.1)
+
+[minify.tdewolff.js]
+precision = 0
+keepVarNames = false
+
+[sitemap]
+changefreq = 'weekly'
+filename = 'sitemap.xml'
+priority = 0.5
+
+# Google Analytics
+[services]
+[services.googleAnalytics]
+id = 'G-Y66QQGQB52'
 
 [outputFormats]
-  [outputFormats.RSS]
-    mediaType = 'application/rss'
-    baseName = 'feed'
-    isPlainText = true
-    notAlternative = true
+[outputFormats.RSS]
+mediaType = 'application/rss'
+baseName = 'feed'
+isPlainText = true
+notAlternative = true
+
+[outputFormats.JSON]
+mediaType = 'application/json'
+baseName = 'index'
+isPlainText = true
+notAlternative = false
 
 [outputs]
-  home = ['HTML', 'RSS']
-  section = ['HTML', 'RSS']
-  taxonomy = ['HTML', 'RSS']
-  term = ['HTML', 'RSS']
+home = ['HTML', 'RSS', 'JSON']
+section = ['HTML', 'RSS', 'JSON']
+page = ['HTML', 'JSON']
+taxonomy = ['HTML', 'RSS']
+term = ['HTML', 'RSS']
+
+[taxonomies]
+tag = 'tags'
+category = 'categories'
+author = 'authors'
+
+[permalinks]
+# Put blog posts under /posts/<slug>/ for clearer structure
+posts = '/posts/:slug/'
+
+[pagination]
+# The number of pages per pager (pagerSize in older docs)
+pagerSize = 10

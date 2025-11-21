@@ -1,0 +1,62 @@
+- role: "Founder & Technology Lead"
+  time: "2022 - Present"
+  company: "Independent / Consulting · Berlin"
+  details: |
+    - Lead technology strategy, platform engineering, and AI/ML adoption for clients operating in regulated, privacy-sensitive environments.
+    - Built secure on-prem AI and automation platforms using Talos/NixOS clusters, GPUs, encrypted mesh networking, and event-driven workflows.
+    - Delivered private inference and document automation systems with classification, routing, extraction, and workflow orchestration.
+    - Defined technology roadmaps, governance models, delivery cadences, and SLO/SLI frameworks tied to business KPIs.
+    - Constructed data ingestion and processing pipelines with schema validation, routing, and ML enrichment.
+    - Ran discovery, scoping, financial modeling, and de-risking spikes for new AI/ML-driven products.
+
+- role: "Engineering Manager & Designate Director of QA"
+  time: "2020 - 2022"
+  company: "Homeday GmbH · Berlin"
+  details: |
+    **Cross-Functional Team Leadership**
+    - Led two cross-functional engineering teams (5–8 engineers each); owned hiring, performance, coaching, and team health.
+    - Partnered with product/design leadership to drive outcome-focused roadmaps and remove structural bottlenecks.
+    - Raised engineering maturity: CI/CD improvements, observability rollout, test strategy enhancements, incident/on-call playbooks.
+    - Known internally as a neutral, effective conflict-resolution point across engineering, product, and operations.
+
+    **Director-Track QA Organization Build (0→1)**
+    - Designed the charter, org structure, hiring plan, competency framework, and operating cadence for the new QA department.
+    - Hired initial senior QA engineers and established interview loops, onboarding paths, and quality KPIs.
+    - Built foundational test strategy, governance model, and tooling direction.
+    - Rollout halted due to a company-wide financial freeze, but foundational processes were adopted by multiple teams.
+
+- role: "Lead Fullstack Engineer"
+  time: "2018"
+  company: "GetSafe GmbH · Heidelberg"
+  details: |
+    - Modernized service boundaries and deployment processes.
+    - Drove early DevOps adoption and delivery stabilization.
+
+- role: "Chief Technology Officer (CTO)"
+  time: "2017 - 2018"
+  company: "Mind Intelligence UG (EXIST Startup) · Berlin"
+  details: |
+    - Led vision and roadmap for an applied AI/ML platform.
+    - Built the initial team, shaped product strategy, and established R&D practices.
+
+- role: "Software Engineer (Ruby on Rails)"
+  time: "2015 - 2017"
+  company: "Distribusion Technologies GmbH · Berlin"
+  details: |
+    - Delivered backend features, improved reliability, and established engineering norms (CI, monitoring, code reviews).
+
+- role: "Software Engineer (Ruby on Rails)"
+  time: "2014 - 2015"
+  company: "Sirena-Bus · Moscow"
+  details: |
+    - Delivered backend features, improved reliability, and established engineering norms (CI, monitoring, code reviews).
+
+- role: "Research Associate / Project Lead – Embedded & Navigation Systems"
+  time: "2012 - 2014"
+  company: "National Research University of Electronic Technology (MIET) · Moscow"
+  details: |
+    - Principal investigator for a major applied R&D project focusing on MEMS/accelerometer-based sensing and embedded navigation systems.
+    - Led a cross-disciplinary team of engineers and scientists through prototyping, testing, performance validation, and integration.
+    - Primary interface to external funding bodies; responsible for reporting, milestone alignment, and deliverable acceptance.
+    - Oversaw technical scope, risk, and financial reconciliation with internal accounting/compliance units.
+    - Delivered validated prototypes, reliability analyses, and formal documentation under strict performance criteria.

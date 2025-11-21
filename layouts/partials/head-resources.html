@@ -1,0 +1,17 @@
+{{- $css := "" -}}
+{{- $skin := .Site.Params.theme_skin | default "blue" -}}
+{{- $cssFile := printf "css/main-%s.scss" $skin -}}
+
+{{- if hugo.IsProduction -}}
+  {{- $css = resources.Get $cssFile | css.Sass | postCSS | resources.Minify | resources.Fingerprint "sha512" -}}
+  <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{- else -}}
+  {{- $css = resources.Get $cssFile | css.Sass -}}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+{{- end -}}
+
+{{- with .Site.Params.fonts.preload -}}
+  {{- range . -}}
+    <link rel="preload" href="{{ . }}" as="font" type="font/woff2" crossorigin>
+  {{- end -}}
+{{- end -}}

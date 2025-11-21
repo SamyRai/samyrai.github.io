@@ -1,0 +1,22 @@
+# Central repository of external sources referenced by posts
+# Each entry can be referenced by `sources` front matter (IDs) to avoid duplicating metadata
+
+linkedin_company:
+  name: "LinkedIn"
+  url: "https://linkedin.com"
+  type: "social"
+
+medium:
+  name: "Medium"
+  url: "https://medium.com"
+  type: "platform"
+
+twitter:
+  name: "X (Twitter)"
+  url: "https://twitter.com"
+  type: "social"
+
+company-blog:
+  name: "Company blog"
+  url: "https://example.com/blog"
+  type: "website"

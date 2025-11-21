@@ -1,0 +1,58 @@
+{{- /* Schema.org JSON-LD structured data for better SEO */ -}}
+{{- if .IsPage -}}
+<script type="application/ld+json">
+{{- $author := .Site.Params.author -}}
+{{- with .Params.author -}}
+  {{- if reflect.IsSlice . -}}
+    {{- $author = index . 0 -}}
+  {{- else -}}
+    {{- $author = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $image := .Params.featured_image | default (printf "%simages/profile.png" .Site.BaseURL) | absURL -}}
+{{- $description := .Description | default .Summary | plainify -}}
+{{- $dateModified := .Lastmod | default .Date -}}
+
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "Article"
+  "headline" .Title
+  "image" (slice $image)
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" ($dateModified.Format "2006-01-02T15:04:05Z07:00")
+  "author" (dict "@type" "Person" "name" $author)
+  "publisher" (dict
+    "@type" "Organization"
+    "name" .Site.Params.author
+    "logo" (dict
+      "@type" "ImageObject"
+      "url" (printf "%simages/profile.png" .Site.BaseURL)
+    )
+  )
+  "description" $description
+  "mainEntityOfPage" (dict
+    "@type" "WebPage"
+    "@id" .Permalink
+  )
+-}}
+
+{{- /* Add keywords if tags are present */ -}}
+{{- with .Params.tags -}}
+  {{- $schema = merge $schema (dict "keywords" (delimit . ", ")) -}}
+{{- end -}}
+
+{{- /* Add articleSection if categories are present */ -}}
+{{- with .Params.categories -}}
+  {{- $schema = merge $schema (dict "articleSection" (index . 0)) -}}
+{{- end -}}
+
+{{- /* Add inLanguage */ -}}
+{{- $schema = merge $schema (dict "inLanguage" .Language.Lang) -}}
+
+{{- /* Add wordCount */ -}}
+{{- $schema = merge $schema (dict "wordCount" .WordCount) -}}
+
+{{- $schema | jsonify -}}
+</script>
+{{- end -}}

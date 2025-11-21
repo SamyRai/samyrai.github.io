@@ -1,0 +1,105 @@
+{{/*
+Partial: display post bibliography/references
+
+New simplified format - references just bibliography IDs from central data/bibliography.json:
+bibliography: ["volkow2005", "bymaster2002", "arnsten2009"]
+
+Old format still supported for backwards compatibility:
+bibliography:
+  - id: "ref1"
+    type: "journal"
+    ...full metadata...
+
+The partial will:
+1. Check if bibliography is a simple array of IDs
+2. If yes, load from data/bibliography.json
+3. If no, use the old inline format
+*/}}
+
+{{ if .Params.bibliography }}
+{{ $site := $.Site }}
+<section class="bibliography">
+    <h2>{{ i18n "bibliography" | default "References" }}</h2>
+    <ol class="bibliography-list">
+    {{ range $index, $refOrID := .Params.bibliography }}
+        {{ $ref := $refOrID }}
+
+        {{/* Check if this is just an ID string (new format) */}}
+        {{ if eq (printf "%T" $refOrID) "string" }}
+            {{/* Load from central bibliography data */}}
+            {{ $bibData := $site.Data.bibliography }}
+            {{ range $bibData }}
+                {{ if eq .id $refOrID }}
+                    {{ $ref = . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        <li id="ref-{{ $ref.id | default (add $index 1) }}" class="bibliography-item">
+            {{/* Authors */}}
+            {{ if $ref.authors }}
+                {{ range $i, $author := $ref.authors }}
+                    {{- if gt $i 0 }}, {{ end }}{{ $author -}}
+                {{ end }}.
+            {{ end }}
+
+            {{/* Year */}}
+            {{ with $ref.year }} ({{ . }}).{{ end }}
+
+            {{/* Title */}}
+            {{ with $ref.title }}
+                {{ if eq $ref.type "journal" }}
+                    <em>{{ . }}</em>.
+                {{ else if eq $ref.type "book" }}
+                    <strong>{{ . }}</strong>.
+                {{ else if eq $ref.type "web" }}
+                    {{ . }}.
+                {{ else }}
+                    {{ . }}.
+                {{ end }}
+            {{ end }}
+
+            {{/* Journal-specific fields */}}
+            {{ if eq $ref.type "journal" }}
+                {{ with $ref.journal }}<em>{{ . }}</em>{{ end }}
+                {{ with $ref.volume }}, {{ . }}{{ end }}
+                {{ with $ref.issue }}({{ . }}){{ end }}
+                {{ with $ref.pages }}, {{ . }}{{ end }}.
+            {{ end }}
+
+            {{/* Book-specific fields */}}
+            {{ if eq $ref.type "book" }}
+                {{ with $ref.edition }}{{ . }} ed.{{ end }}
+                {{ with $ref.publisher }}{{ . }}{{ end }}.
+            {{ end }}
+
+            {{/* Publisher for reports and web */}}
+            {{ if or (eq $ref.type "report") (eq $ref.type "web") }}
+                {{ with $ref.publisher }}{{ . }}.{{ end }}
+            {{ end }}
+
+            {{/* URL */}}
+            {{ with $ref.url }}
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="bib-link">Link</a>
+            {{ end }}
+
+            {{/* DOI */}}
+            {{ with $ref.doi }}
+                {{ if $ref.url }} | {{ end }}
+                DOI: <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+            {{ end }}
+
+            {{/* Accessed date for web sources */}}
+            {{ if and (eq $ref.type "web") $ref.accessed }}
+                Accessed: {{ $ref.accessed }}.
+            {{ end }}
+
+            {{/* Note */}}
+            {{ with $ref.note }}
+                <span class="bib-note">{{ . }}</span>
+            {{ end }}
+        </li>
+    {{ end }}
+    </ol>
+</section>
+{{ end }}

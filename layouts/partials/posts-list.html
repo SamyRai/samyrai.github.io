@@ -1,0 +1,123 @@
+<div class="container">
+    <section class="animate-fade-in">
+        <div class="card posts-list">
+            <!-- Blog submenu with categories & tags -->
+            {{ partial "blog-submenu.html" . }}
+
+            <div class="page-header">
+                <h1>{{ .Title }}</h1>
+                {{ if .Params.description }}
+                <p class="page-description">{{ .Params.description }}</p>
+                {{ end }}
+            </div>
+
+            <!-- Search component -->
+            {{ partial "search.html" . }}
+
+            <!-- Posts will be filtered/sorted by filter-posts.js -->
+            <div class="posts-grid">
+                {{ $pages := .Paginate .Pages }}
+                {{ range $pages.Pages }}
+                {{ $ptags := .Params.tags | default slice }}
+                {{ $pcats := .Params.categories | default slice }}
+                <article class="post-card post-item"
+                         data-tags="{{ delimit $ptags "," }}"
+                         data-categories="{{ delimit $pcats "," }}"
+                         data-date="{{ .Date.Format "2006-01-02" }}"
+                         data-reading-time="{{ .ReadingTime }}">
+                    {{ if .Params.featured_image }}
+                    <div class="post-image">
+                        <a href="{{ .RelPermalink }}">
+                            <img src="{{ .Params.featured_image | absURL }}"
+                                 alt="{{ .Title }}"
+                                 loading="lazy">
+                        </a>
+                    </div>
+                    {{ end }}
+
+                    <div class="post-content">
+                        <header class="post-header">
+                            {{ if .Params.categories }}
+                            <div class="post-categories">
+                                {{ range $i, $cat := .Params.categories }}
+                                <a href="/categories/{{ $cat | urlize }}/"
+                                   data-filter-category="{{ $cat }}">
+                                    {{ $cat }}
+                                </a>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+
+                            <h2 class="post-title">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h2>
+
+                            <div class="post-meta">
+                                {{ if .Params.author }}
+                                <div class="post-author">
+                                    {{ $author := index .Params.author 0 }}
+                                    <svg class="icon-sm" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <a href="/authors/{{ $author | urlize }}/">{{ $author }}</a>
+                                </div>
+                                <span class="separator">·</span>
+                                {{ end }}
+                                <div class="post-date">
+                                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                                </div>
+                                <span class="separator">·</span>
+                                <div class="reading-time">
+                                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>{{ .ReadingTime }} min read</span>
+                                </div>
+                            </div>
+                        </header>
+
+                        {{ if .Params.description }}
+                        <p class="post-summary">{{ .Params.description }}</p>
+                        {{ else if .Summary }}
+                        <p class="post-summary">{{ .Summary | truncate 200 }}</p>
+                        {{ end }}
+
+                        <footer class="post-footer">
+                            <div class="footer-content">
+                                {{ if .Params.tags }}
+                                <div class="post-tags">
+                                    {{ range $i, $tag := (first 3 .Params.tags) }}
+                                    <a href="/tags/{{ $tag | urlize }}/"
+                                       data-filter-tag="{{ $tag }}"
+                                       class="tag-pill primary">
+                                        #{{ $tag }}
+                                    </a>
+                                    {{ end }}
+                                    {{ if gt (len .Params.tags) 3 }}
+                                    <span class="more-tags">+{{ sub (len .Params.tags) 3 }} more</span>
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                                <a href="{{ .RelPermalink }}"
+                                   class="read-more"
+                                   aria-label="Read {{ .Title }}">
+                                    Read more
+                                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </footer>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+
+            <!-- Pagination -->
+            {{ partial "pagination.html" . }}
+        </div>
+    </section>
+</div>

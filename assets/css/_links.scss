@@ -1,0 +1,58 @@
+/* Global link utilities and variants — DRY: single source of truth for link styles */
+
+/* Base anchor — keep concise, use custom properties for theming */
+:root {
+  --link-decoration-thickness: var(--border-width-thin);
+  --link-underline-offset: var(--space-1);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary-dark);
+  }
+
+  &:focus-visible {
+    outline: var(--border-width-base) solid var(--color-primary);
+    outline-offset: var(--space-1);
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Variants (add class to anchor to change behavior) */
+.link-plain { text-decoration: none; }
+.link-inherit { color: inherit; }
+.link-muted { color: var(--color-text-secondary); }
+.link-underline {
+  text-decoration: underline;
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: var(--link-decoration-thickness);
+  /* Use primary color for decoration; fallback to primary if possible */
+  text-decoration-color: var(--color-primary);
+}
+
+/* Utility: treat button-like links — no underline and ensure alignment */
+.link-button-like {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Short helper to force link color if needed */
+.link-primary { color: var(--color-primary); }
+.link-primary:hover { color: var(--color-primary-dark); }
+.link-secondary { color: var(--color-text-secondary); }
+
+/* Prose-specific override: prefer underlined text inside content */
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: var(--link-underline-offset);
+  text-decoration-thickness: var(--link-decoration-thickness);
+  text-decoration-color: var(--color-primary-light);
+  font-weight: var(--font-weight-medium);
+}

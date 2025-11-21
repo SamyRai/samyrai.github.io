@@ -1,0 +1,17 @@
+<nav class="language-menu" aria-label="Language selection">
+    {{/* Current language */}}
+    <span class="current" lang="{{ .Language.Lang }}" aria-current="page">
+        {{ .Language.LanguageName }}
+    </span>
+
+    {{/* Other available translations */}}
+    {{ if .IsTranslated }}
+        {{ range .Translations }}
+            <a href="{{ .Permalink }}"
+               lang="{{ .Language.Lang }}"
+               hreflang="{{ .Language.Lang }}">
+                {{ .Language.LanguageName }}
+            </a>
+        {{ end }}
+    {{ end }}
+</nav>

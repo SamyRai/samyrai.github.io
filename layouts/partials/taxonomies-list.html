@@ -1,0 +1,24 @@
+{{ if .Site.Taxonomies.tags }}
+<div class="sidebar-section">
+    <h2 class="sidebar-title">{{ i18n "tags" }}</h2>
+    <div class="tag-cloud">
+        {{ range $term, $pages := (.Site.Taxonomies.tags) }}
+        <a href="/tags/{{ $term | urlize }}/">#{{ $term }}</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
+{{ if .Site.Taxonomies.categories }}
+<div class="sidebar-section">
+    <h2 class="sidebar-title">{{ i18n "categories" }}</h2>
+    {{ if .Site.Params.showSourcesInSidebar }}
+    {{ partial "sources.html" . }}
+    {{ end }}
+    <div class="category-list">
+        {{ range $term, $pages := (.Site.Taxonomies.categories) }}
+        <a href="/categories/{{ $term | urlize }}/">{{ $term }} <span class="count">({{ len $pages }})</span></a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

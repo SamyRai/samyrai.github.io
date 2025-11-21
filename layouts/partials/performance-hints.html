@@ -1,0 +1,30 @@
+{{- /*
+  Performance optimization hints
+  DNS prefetch, preconnect, and preload critical resources
+*/ -}}
+
+{{- /* DNS prefetch for common external domains */ -}}
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+{{ with .Site.Config.Services.GoogleAnalytics.ID }}
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+{{ end }}
+
+{{- /* Preconnect to critical origins */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{{- /* Preload critical CSS */ -}}
+{{ $skin := .Site.Params.theme_skin | default "blue" }}
+{{ $cssFile := printf "css/main-%s.scss" $skin }}
+{{ with resources.Get $cssFile }}
+  {{ $css := . | css.Sass }}
+  <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+{{ end }}
+
+{{- /* Add resource hints for CDN if using one */ -}}
+{{- with .Site.Params.cdn -}}
+  <link rel="dns-prefetch" href="{{ . }}">
+  <link rel="preconnect" href="{{ . }}" crossorigin>
+{{- end -}}
